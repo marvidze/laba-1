@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace laba_1
 {
@@ -51,7 +53,25 @@ namespace laba_1
             _countOfSeats = countOfSeats;
         }
 
-        
-        
+        public void printName () {
+            Console.WriteLine($"Name = {_name}.\n");
+        }
+        public void printAdress()
+        {
+            Console.WriteLine($"Adress = {_addres}.\n");
+        }
+        public void printPhone()
+        {
+            Console.WriteLine($"Phone: {_numberOfPhone}.\n");
+        }
+
+        /// <summary>
+        /// Переопределённый метод toString().
+        /// </summary>
+        /// <returns>Возвращает строку, содержащую всю информацию о библиотеке.</returns>
+        public override string ToString()
+        {
+            return $"Name = {_name},\n Age = {_addres},\n Phone: {_numberOfPhone},\n Rating = {_rating},\n Books: {_countOfBooks},\n Seats: {_countOfSeats}.\n";
+        }
     }
 }
