@@ -10,7 +10,7 @@ namespace laba_1
     {
         private string _name;
         private string _addres = "Отсутствует значение";
-        private string _numberOfPhone = "Отсутствует значение";
+        private string _numberOfPhone = "";
         private float _rating = 0;
         private int _countOfBooks = 0;
         private int _countOfSeats = 0;
@@ -55,9 +55,7 @@ namespace laba_1
             _countOfSeats = countOfSeats;
         }
 
-        public override string ToString()
-        {
-            return $"{_name}";
-        }
+        
+        
     }
 }
