@@ -10,11 +10,13 @@ namespace laba_1
     {
         private string _name;
         private string _addres = "Отсутствует значение";
-        private string _numberOfPhone = "";
+        private string _numberOfPhone = "Отсутствует значение";
         private float _rating = 0;
         private int _countOfBooks = 0;
         private int _countOfSeats = 0;
+        private int _id;
         private static int _countOfObjects = 0;
+        public static List<Library> objectList = new List<Library>();
 
         public string Name { get => _name; set => _name = value; }
         public string Addres { get => _addres; set => _addres = value; }
@@ -22,10 +24,12 @@ namespace laba_1
         public float Rating { get => _rating; set => _rating = value; }
         public int CountOfBooks { get => _countOfBooks; set => _countOfBooks = value; }
         public int CountOfSeats { get => _countOfSeats; set => _countOfSeats = value; }
+        public int Id { get => _id; set => _id = value; }
 
         public Library()
         {
             _countOfObjects++;
+            _id = _countOfBooks;
             _name = "Библиотека №" + _countOfObjects.ToString();
         }
 
@@ -51,7 +55,9 @@ namespace laba_1
             _countOfSeats = countOfSeats;
         }
 
-        
-        
+        public override string ToString()
+        {
+            return $"{_name}";
+        }
     }
 }
