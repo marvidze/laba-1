@@ -39,6 +39,7 @@
             this.formListInfoObject = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonShowAllParametrs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -179,6 +180,20 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Объекты";
             // 
+            // buttonShowAllParametrs
+            // 
+            this.buttonShowAllParametrs.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowAllParametrs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowAllParametrs.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonShowAllParametrs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShowAllParametrs.Location = new System.Drawing.Point(555, 33);
+            this.buttonShowAllParametrs.Name = "buttonShowAllParametrs";
+            this.buttonShowAllParametrs.Size = new System.Drawing.Size(167, 33);
+            this.buttonShowAllParametrs.TabIndex = 0;
+            this.buttonShowAllParametrs.Text = "Показать все поля";
+            this.buttonShowAllParametrs.UseVisualStyleBackColor = false;
+            this.buttonShowAllParametrs.Click += new System.EventHandler(this.buttonShowAllParametrs_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +209,7 @@
             this.Controls.Add(this.buttonCreateObjectTwoParametr);
             this.Controls.Add(this.buttonCreateObjectOneParametr);
             this.Controls.Add(this.textBoxExeptions);
+            this.Controls.Add(this.buttonShowAllParametrs);
             this.Controls.Add(this.buttonDeleteObject);
             this.Controls.Add(this.buttonExit);
             this.Name = "MainForm";
@@ -218,5 +234,6 @@
         private System.Windows.Forms.ListBox formListInfoObject;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonShowAllParametrs;
     }
 }
