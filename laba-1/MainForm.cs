@@ -58,19 +58,25 @@ namespace laba_1
             Library.objectList.Remove(a);
             a = null;
             formObjectsList.Items.Remove(formObjectsList.SelectedItem);
+            formListInfoObject.Items.Clear();   
         }
 
         private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Library a = (Library)formObjectsList.SelectedItem;
-            //string[] arr = { "Название: "+a.Name,
-            //    "Адрес: " + a.Addres,
-            //    "Рейтинг: "+ a.Rating.ToString(),
-            //    "Номер телефона: "+ a.NumberOfPhone.ToString(),
-            //    "Количество книг: " + a.CountOfBooks.ToString(),
-            //    "Количество мест в читальном зале: " + a.CountOfSeats.ToString()};
-            //formListInfoObject.Items.Clear();
-            //formListInfoObject.Items.AddRange(arr);
+            
+        }
+
+        private void buttonShowAllParametrs_Click(object sender, EventArgs e)
+        {
+            Library a = (Library)formObjectsList.SelectedItem;
+            string[] arr = { "Название: "+a.Name,
+                "Адрес: " + a.Addres,
+                "Рейтинг: "+ a.Rating.ToString(),
+                "Номер телефона: "+ a.NumberOfPhone.ToString(),
+                "Количество книг: " + a.CountOfBooks.ToString(),
+                "Количество мест в читальном зале: " + a.CountOfSeats.ToString()};
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.AddRange(arr);
         }
     }
 }

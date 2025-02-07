@@ -57,16 +57,16 @@ namespace laba_1
             _countOfSeats = countOfSeats;
         }
 
-        public void printName () {
-            Console.WriteLine($"Name = {_name}.\n");
+        public String printName () {
+            return $"Название = {_name}.\n";
         }
-        public void printAdress()
+        public String printAdress()
         {
-            Console.WriteLine($"Adress = {_addres}.\n");
+            return $"Адрес = {_addres}.\n";
         }
-        public void printPhone()
+        public String printPhone()
         {
-            Console.WriteLine($"Phone: {_numberOfPhone}.\n");
+            return $"Номер телефона: {_numberOfPhone}.\n";
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace laba_1
         /// <returns>Возвращает строку, содержащую всю информацию о библиотеке.</returns>
         public override string ToString()
         {
-            return $"Name = {_name},\n Age = {_addres},\n Phone: {_numberOfPhone},\n Rating = {_rating},\n Books: {_countOfBooks},\n Seats: {_countOfSeats}.\n";
+            return $"{_name}";
         }
     }
 }
