@@ -78,5 +78,40 @@ namespace laba_1
             formListInfoObject.Items.Clear();
             formListInfoObject.Items.AddRange(arr);
         }
+
+        private void buttonShowAdress_Click(object sender, EventArgs e)
+        {
+            Library a = (Library)formObjectsList.SelectedItem;
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.Add("Адрес: "+a.Addres);
+        }
+
+        private void buttonShowNumberOfPhone_Click(object sender, EventArgs e)
+        {
+            Library a = (Library)formObjectsList.SelectedItem;
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.Add("Номер телефона: " + a.NumberOfPhone);
+        }
+
+        private void buttonShowCountOfSeats_Click(object sender, EventArgs e)
+        {
+            Library a = (Library)formObjectsList.SelectedItem;
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.Add("Количество мест в читальном зале: " + a.CountOfSeats);
+        }
+
+        private void buttonShowRating_Click(object sender, EventArgs e)
+        {
+            Library a = (Library)formObjectsList.SelectedItem;
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.Add("Рейтинг: " + a.Rating);
+        }
+
+        private void buttonShowCountOfBooks_Click(object sender, EventArgs e)
+        {
+            Library a = (Library)formObjectsList.SelectedItem;
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+        }
     }
 }

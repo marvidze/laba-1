@@ -57,18 +57,6 @@ namespace laba_1
             _countOfSeats = countOfSeats;
         }
 
-        public String printName () {
-            return $"Название = {_name}.\n";
-        }
-        public String printAdress()
-        {
-            return $"Адрес = {_addres}.\n";
-        }
-        public String printPhone()
-        {
-            return $"Номер телефона: {_numberOfPhone}.\n";
-        }
-
         /// <summary>
         /// Переопределённый метод toString().
         /// </summary>
