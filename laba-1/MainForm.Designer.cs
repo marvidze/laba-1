@@ -40,6 +40,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonShowAllParametrs = new System.Windows.Forms.Button();
+            this.buttonShowAddres = new System.Windows.Forms.Button();
+            this.buttonShowNumberOfPhone = new System.Windows.Forms.Button();
+            this.buttonShowCountOfSeats = new System.Windows.Forms.Button();
+            this.buttonShowCountOfBooks = new System.Windows.Forms.Button();
+            this.buttonShowRating = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -48,7 +53,7 @@
             this.buttonCreateObjectOneParametr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreateObjectOneParametr.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCreateObjectOneParametr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectOneParametr.Location = new System.Drawing.Point(555, 394);
+            this.buttonCreateObjectOneParametr.Location = new System.Drawing.Point(555, 467);
             this.buttonCreateObjectOneParametr.Name = "buttonCreateObjectOneParametr";
             this.buttonCreateObjectOneParametr.Size = new System.Drawing.Size(167, 67);
             this.buttonCreateObjectOneParametr.TabIndex = 0;
@@ -62,7 +67,7 @@
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExit.Location = new System.Drawing.Point(555, 613);
+            this.buttonExit.Location = new System.Drawing.Point(642, 613);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(167, 36);
             this.buttonExit.TabIndex = 0;
@@ -100,7 +105,7 @@
             this.buttonCreateObjectTwoParametr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreateObjectTwoParametr.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCreateObjectTwoParametr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectTwoParametr.Location = new System.Drawing.Point(555, 467);
+            this.buttonCreateObjectTwoParametr.Location = new System.Drawing.Point(728, 540);
             this.buttonCreateObjectTwoParametr.Name = "buttonCreateObjectTwoParametr";
             this.buttonCreateObjectTwoParametr.Size = new System.Drawing.Size(167, 67);
             this.buttonCreateObjectTwoParametr.TabIndex = 0;
@@ -128,7 +133,7 @@
             this.buttonCreateObjectNullParametrs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreateObjectNullParametrs.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCreateObjectNullParametrs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectNullParametrs.Location = new System.Drawing.Point(555, 321);
+            this.buttonCreateObjectNullParametrs.Location = new System.Drawing.Point(728, 467);
             this.buttonCreateObjectNullParametrs.Name = "buttonCreateObjectNullParametrs";
             this.buttonCreateObjectNullParametrs.Size = new System.Drawing.Size(167, 67);
             this.buttonCreateObjectNullParametrs.TabIndex = 0;
@@ -142,7 +147,7 @@
             this.buttonDeleteObject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDeleteObject.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonDeleteObject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteObject.Location = new System.Drawing.Point(555, 279);
+            this.buttonDeleteObject.Location = new System.Drawing.Point(642, 425);
             this.buttonDeleteObject.Name = "buttonDeleteObject";
             this.buttonDeleteObject.Size = new System.Drawing.Size(167, 36);
             this.buttonDeleteObject.TabIndex = 0;
@@ -188,18 +193,88 @@
             this.buttonShowAllParametrs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonShowAllParametrs.Location = new System.Drawing.Point(555, 33);
             this.buttonShowAllParametrs.Name = "buttonShowAllParametrs";
-            this.buttonShowAllParametrs.Size = new System.Drawing.Size(167, 33);
+            this.buttonShowAllParametrs.Size = new System.Drawing.Size(167, 67);
             this.buttonShowAllParametrs.TabIndex = 0;
             this.buttonShowAllParametrs.Text = "Показать все поля";
             this.buttonShowAllParametrs.UseVisualStyleBackColor = false;
             this.buttonShowAllParametrs.Click += new System.EventHandler(this.buttonShowAllParametrs_Click);
+            // 
+            // buttonShowAddres
+            // 
+            this.buttonShowAddres.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowAddres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowAddres.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonShowAddres.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShowAddres.Location = new System.Drawing.Point(728, 33);
+            this.buttonShowAddres.Name = "buttonShowAddres";
+            this.buttonShowAddres.Size = new System.Drawing.Size(167, 67);
+            this.buttonShowAddres.TabIndex = 0;
+            this.buttonShowAddres.Text = "Показать адрес";
+            this.buttonShowAddres.UseVisualStyleBackColor = false;
+            this.buttonShowAddres.Click += new System.EventHandler(this.buttonShowAdress_Click);
+            // 
+            // buttonShowNumberOfPhone
+            // 
+            this.buttonShowNumberOfPhone.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowNumberOfPhone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowNumberOfPhone.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonShowNumberOfPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShowNumberOfPhone.Location = new System.Drawing.Point(555, 179);
+            this.buttonShowNumberOfPhone.Name = "buttonShowNumberOfPhone";
+            this.buttonShowNumberOfPhone.Size = new System.Drawing.Size(167, 67);
+            this.buttonShowNumberOfPhone.TabIndex = 0;
+            this.buttonShowNumberOfPhone.Text = "Показать номер телефона";
+            this.buttonShowNumberOfPhone.UseVisualStyleBackColor = false;
+            this.buttonShowNumberOfPhone.Click += new System.EventHandler(this.buttonShowNumberOfPhone_Click);
+            // 
+            // buttonShowCountOfSeats
+            // 
+            this.buttonShowCountOfSeats.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowCountOfSeats.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowCountOfSeats.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonShowCountOfSeats.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShowCountOfSeats.Location = new System.Drawing.Point(728, 106);
+            this.buttonShowCountOfSeats.Name = "buttonShowCountOfSeats";
+            this.buttonShowCountOfSeats.Size = new System.Drawing.Size(167, 67);
+            this.buttonShowCountOfSeats.TabIndex = 0;
+            this.buttonShowCountOfSeats.Text = "Показать количество мест в читальном зале";
+            this.buttonShowCountOfSeats.UseVisualStyleBackColor = false;
+            this.buttonShowCountOfSeats.Click += new System.EventHandler(this.buttonShowCountOfSeats_Click);
+            // 
+            // buttonShowCountOfBooks
+            // 
+            this.buttonShowCountOfBooks.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowCountOfBooks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowCountOfBooks.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonShowCountOfBooks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShowCountOfBooks.Location = new System.Drawing.Point(728, 179);
+            this.buttonShowCountOfBooks.Name = "buttonShowCountOfBooks";
+            this.buttonShowCountOfBooks.Size = new System.Drawing.Size(167, 67);
+            this.buttonShowCountOfBooks.TabIndex = 0;
+            this.buttonShowCountOfBooks.Text = "Показать количество книг";
+            this.buttonShowCountOfBooks.UseVisualStyleBackColor = false;
+            this.buttonShowCountOfBooks.Click += new System.EventHandler(this.buttonShowCountOfBooks_Click);
+            // 
+            // buttonShowRating
+            // 
+            this.buttonShowRating.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonShowRating.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowRating.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonShowRating.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShowRating.Location = new System.Drawing.Point(555, 106);
+            this.buttonShowRating.Name = "buttonShowRating";
+            this.buttonShowRating.Size = new System.Drawing.Size(167, 67);
+            this.buttonShowRating.TabIndex = 0;
+            this.buttonShowRating.Text = "Показать рейтинг";
+            this.buttonShowRating.UseVisualStyleBackColor = false;
+            this.buttonShowRating.Click += new System.EventHandler(this.buttonShowRating_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(734, 661);
+            this.ClientSize = new System.Drawing.Size(902, 661);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formListInfoObject);
@@ -209,6 +284,11 @@
             this.Controls.Add(this.buttonCreateObjectTwoParametr);
             this.Controls.Add(this.buttonCreateObjectOneParametr);
             this.Controls.Add(this.textBoxExeptions);
+            this.Controls.Add(this.buttonShowRating);
+            this.Controls.Add(this.buttonShowCountOfBooks);
+            this.Controls.Add(this.buttonShowCountOfSeats);
+            this.Controls.Add(this.buttonShowNumberOfPhone);
+            this.Controls.Add(this.buttonShowAddres);
             this.Controls.Add(this.buttonShowAllParametrs);
             this.Controls.Add(this.buttonDeleteObject);
             this.Controls.Add(this.buttonExit);
@@ -235,5 +315,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonShowAllParametrs;
+        private System.Windows.Forms.Button buttonShowAddres;
+        private System.Windows.Forms.Button buttonShowNumberOfPhone;
+        private System.Windows.Forms.Button buttonShowCountOfSeats;
+        private System.Windows.Forms.Button buttonShowCountOfBooks;
+        private System.Windows.Forms.Button buttonShowRating;
     }
 }
