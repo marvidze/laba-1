@@ -20,8 +20,8 @@ namespace laba_1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Library.objectList.Add(new Library());
-            formObjectsList.Items.AddRange(Library.objectList.ToArray());
+            Library.ObjectList.Add(new Library());
+            formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -29,36 +29,22 @@ namespace laba_1
         }
         private void buttonCreateObjectOneParametr_Click(object sender, EventArgs e)
         {
-            Library.objectList.Add(new Library());
-            formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(Library.objectList.ToArray());
-        }
-        private void buttonCreateObjectNullRapametr_Click(object sender, EventArgs e)
-        {
-            Library.objectList.Add(new Library());
-            formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(Library.objectList.ToArray());
-        }
-        private void buttonCreateObjectTwoRapametr_Click(object sender, EventArgs e)
-        {
-            Library.objectList.Add(new Library());
-            formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(Library.objectList.ToArray());
-        }
-
-        private void buttonCreateObjectAllRapametrs_Click(object sender, EventArgs e)
-        {
-            Library.objectList.Add(new Library());
-            formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(Library.objectList.ToArray());
+            CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
+            DialogResult result = OneParametrForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
+            }
         }
         private void buttonDeleteObject_Click(object sender, EventArgs e)
         {
             Library a = (Library)formObjectsList.SelectedItem;
-            Library.objectList.Remove(a);
+            Library.ObjectList.Remove(a);
             a = null;
             formObjectsList.Items.Remove(formObjectsList.SelectedItem);
-            formListInfoObject.Items.Clear();   
+            formListInfoObject.Items.Clear();
+            Library.CountOfObjects = --Library.CountOfObjects;
         }
 
         private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)

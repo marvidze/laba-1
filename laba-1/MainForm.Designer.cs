@@ -1,4 +1,6 @@
-﻿namespace laba_1
+﻿using System.Windows.Forms;
+
+namespace laba_1
 {
     partial class MainForm
     {
@@ -32,9 +34,6 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.textBoxExeptions = new System.Windows.Forms.TextBox();
             this.formObjectsList = new System.Windows.Forms.ListBox();
-            this.buttonCreateObjectTwoParametr = new System.Windows.Forms.Button();
-            this.buttonCreateObjectAllParametrs = new System.Windows.Forms.Button();
-            this.buttonCreateObjectNullParametrs = new System.Windows.Forms.Button();
             this.buttonDeleteObject = new System.Windows.Forms.Button();
             this.formListInfoObject = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,11 +52,11 @@
             this.buttonCreateObjectOneParametr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreateObjectOneParametr.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCreateObjectOneParametr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectOneParametr.Location = new System.Drawing.Point(555, 467);
+            this.buttonCreateObjectOneParametr.Location = new System.Drawing.Point(555, 540);
             this.buttonCreateObjectOneParametr.Name = "buttonCreateObjectOneParametr";
             this.buttonCreateObjectOneParametr.Size = new System.Drawing.Size(167, 67);
             this.buttonCreateObjectOneParametr.TabIndex = 0;
-            this.buttonCreateObjectOneParametr.Text = "Создать объект \r\n(1 параметром)";
+            this.buttonCreateObjectOneParametr.Text = "Создать объект ";
             this.buttonCreateObjectOneParametr.UseVisualStyleBackColor = false;
             this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.buttonCreateObjectOneParametr_Click);
             // 
@@ -99,57 +98,15 @@
             this.formObjectsList.TabIndex = 3;
             this.formObjectsList.SelectedIndexChanged += new System.EventHandler(this.formListObjects_SelectedIndexChanged);
             // 
-            // buttonCreateObjectTwoParametr
-            // 
-            this.buttonCreateObjectTwoParametr.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCreateObjectTwoParametr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateObjectTwoParametr.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCreateObjectTwoParametr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectTwoParametr.Location = new System.Drawing.Point(728, 540);
-            this.buttonCreateObjectTwoParametr.Name = "buttonCreateObjectTwoParametr";
-            this.buttonCreateObjectTwoParametr.Size = new System.Drawing.Size(167, 67);
-            this.buttonCreateObjectTwoParametr.TabIndex = 0;
-            this.buttonCreateObjectTwoParametr.Text = "Создать объект \r\n(2 параметрами)";
-            this.buttonCreateObjectTwoParametr.UseVisualStyleBackColor = false;
-            this.buttonCreateObjectTwoParametr.Click += new System.EventHandler(this.buttonCreateObjectTwoRapametr_Click);
-            // 
-            // buttonCreateObjectAllParametrs
-            // 
-            this.buttonCreateObjectAllParametrs.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCreateObjectAllParametrs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateObjectAllParametrs.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCreateObjectAllParametrs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectAllParametrs.Location = new System.Drawing.Point(555, 540);
-            this.buttonCreateObjectAllParametrs.Name = "buttonCreateObjectAllParametrs";
-            this.buttonCreateObjectAllParametrs.Size = new System.Drawing.Size(167, 67);
-            this.buttonCreateObjectAllParametrs.TabIndex = 0;
-            this.buttonCreateObjectAllParametrs.Text = "Создать объект \r\n(всеми параметрами)";
-            this.buttonCreateObjectAllParametrs.UseVisualStyleBackColor = false;
-            this.buttonCreateObjectAllParametrs.Click += new System.EventHandler(this.buttonCreateObjectAllRapametrs_Click);
-            // 
-            // buttonCreateObjectNullParametrs
-            // 
-            this.buttonCreateObjectNullParametrs.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCreateObjectNullParametrs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateObjectNullParametrs.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCreateObjectNullParametrs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateObjectNullParametrs.Location = new System.Drawing.Point(728, 467);
-            this.buttonCreateObjectNullParametrs.Name = "buttonCreateObjectNullParametrs";
-            this.buttonCreateObjectNullParametrs.Size = new System.Drawing.Size(167, 67);
-            this.buttonCreateObjectNullParametrs.TabIndex = 0;
-            this.buttonCreateObjectNullParametrs.Text = "Создать объект \r\n(без параметров)";
-            this.buttonCreateObjectNullParametrs.UseVisualStyleBackColor = false;
-            this.buttonCreateObjectNullParametrs.Click += new System.EventHandler(this.buttonCreateObjectNullRapametr_Click);
-            // 
             // buttonDeleteObject
             // 
             this.buttonDeleteObject.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDeleteObject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDeleteObject.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonDeleteObject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteObject.Location = new System.Drawing.Point(642, 425);
+            this.buttonDeleteObject.Location = new System.Drawing.Point(728, 540);
             this.buttonDeleteObject.Name = "buttonDeleteObject";
-            this.buttonDeleteObject.Size = new System.Drawing.Size(167, 36);
+            this.buttonDeleteObject.Size = new System.Drawing.Size(167, 67);
             this.buttonDeleteObject.TabIndex = 0;
             this.buttonDeleteObject.Text = "Удалить объект";
             this.buttonDeleteObject.UseVisualStyleBackColor = false;
@@ -279,9 +236,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formListInfoObject);
             this.Controls.Add(this.formObjectsList);
-            this.Controls.Add(this.buttonCreateObjectNullParametrs);
-            this.Controls.Add(this.buttonCreateObjectAllParametrs);
-            this.Controls.Add(this.buttonCreateObjectTwoParametr);
             this.Controls.Add(this.buttonCreateObjectOneParametr);
             this.Controls.Add(this.textBoxExeptions);
             this.Controls.Add(this.buttonShowRating);
@@ -307,9 +261,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.TextBox textBoxExeptions;
         private System.Windows.Forms.ListBox formObjectsList;
-        private System.Windows.Forms.Button buttonCreateObjectTwoParametr;
-        private System.Windows.Forms.Button buttonCreateObjectAllParametrs;
-        private System.Windows.Forms.Button buttonCreateObjectNullParametrs;
         private System.Windows.Forms.Button buttonDeleteObject;
         private System.Windows.Forms.ListBox formListInfoObject;
         private System.Windows.Forms.Label label1;
