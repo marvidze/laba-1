@@ -21,9 +21,9 @@ namespace laba_1
         private static List<Library> _objectList = new List<Library>();
 
         public string Name { get => _name; set => _name = value; }
-        public string Addres {  get => _addres == "" ? throw new LibraryException("Отсутствует значение!") : _addres; 
+        public string Addres {  get => _addres == "" ? throw new LibraryException("Отсутствует значение адреса!") : _addres; 
             set => _addres = value; }
-        public string NumberOfPhone { get => _numberOfPhone == "" ? throw new LibraryException("Отсутствует значение!") : _numberOfPhone;
+        public string NumberOfPhone { get => _numberOfPhone == "" ? throw new LibraryException("Отсутствует значение номера телефона!") : _numberOfPhone;
             set => _numberOfPhone = value; }
         public float Rating { get => _rating; set => _rating = value; }
         public int CountOfBooks { get => _countOfBooks; set => _countOfBooks = value; }

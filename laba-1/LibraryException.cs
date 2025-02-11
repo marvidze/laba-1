@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace laba_1
 {
+    /// <summary>
+    /// Класс исключений для класса Library
+    /// </summary>
     internal class LibraryException : Exception
     {
         public LibraryException(string message)
