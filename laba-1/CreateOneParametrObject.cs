@@ -18,7 +18,7 @@ namespace laba_1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_createObject_Click(object sender, EventArgs e)
         {
             string Name = textBox_name.Text;
             string Adress = textBox_adress.Text;
@@ -31,10 +31,12 @@ namespace laba_1
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_closeForm_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.No;
             this.Close();
         }
+
+
     }
 }

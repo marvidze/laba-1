@@ -47,11 +47,6 @@ namespace laba_1
             Library.CountOfObjects = --Library.CountOfObjects;
         }
 
-        private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
             Library a = (Library)formObjectsList.SelectedItem;
@@ -98,6 +93,19 @@ namespace laba_1
             Library a = (Library)formObjectsList.SelectedItem;
             formListInfoObject.Items.Clear();
             formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+        }
+
+        private void buttonChangeFields_Click(object sender, EventArgs e)
+        {
+            CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
+            DialogResult result = OneParametrForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
+                Library a = (Library)formObjectsList.SelectedItem;
+                //a.Addres
+            }
         }
     }
 }

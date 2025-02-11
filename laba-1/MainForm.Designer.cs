@@ -44,6 +44,7 @@ namespace laba_1
             this.buttonShowCountOfSeats = new System.Windows.Forms.Button();
             this.buttonShowCountOfBooks = new System.Windows.Forms.Button();
             this.buttonShowRating = new System.Windows.Forms.Button();
+            this.buttonChangeFields = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -96,7 +97,6 @@ namespace laba_1
             this.formObjectsList.Name = "formObjectsList";
             this.formObjectsList.Size = new System.Drawing.Size(206, 529);
             this.formObjectsList.TabIndex = 3;
-            this.formObjectsList.SelectedIndexChanged += new System.EventHandler(this.formListObjects_SelectedIndexChanged);
             // 
             // buttonDeleteObject
             // 
@@ -226,12 +226,27 @@ namespace laba_1
             this.buttonShowRating.UseVisualStyleBackColor = false;
             this.buttonShowRating.Click += new System.EventHandler(this.buttonShowRating_Click);
             // 
+            // buttonChangeFields
+            // 
+            this.buttonChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonChangeFields.Location = new System.Drawing.Point(642, 252);
+            this.buttonChangeFields.Name = "buttonChangeFields";
+            this.buttonChangeFields.Size = new System.Drawing.Size(167, 67);
+            this.buttonChangeFields.TabIndex = 5;
+            this.buttonChangeFields.Text = "Изменить поля";
+            this.buttonChangeFields.UseVisualStyleBackColor = false;
+            this.buttonChangeFields.Click += new System.EventHandler(this.buttonChangeFields_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(902, 661);
+            this.Controls.Add(this.buttonChangeFields);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formListInfoObject);
@@ -271,5 +286,6 @@ namespace laba_1
         private System.Windows.Forms.Button buttonShowCountOfSeats;
         private System.Windows.Forms.Button buttonShowCountOfBooks;
         private System.Windows.Forms.Button buttonShowRating;
+        private Button buttonChangeFields;
     }
 }
