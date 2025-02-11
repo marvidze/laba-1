@@ -12,7 +12,7 @@ namespace laba_1
 {
     public partial class MainForm : Form
     {
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,8 +20,7 @@ namespace laba_1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Library.ObjectList.Add(new Library());
-            formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
+
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -37,75 +36,142 @@ namespace laba_1
                 formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
             }
         }
+
         private void buttonDeleteObject_Click(object sender, EventArgs e)
         {
             Library a = (Library)formObjectsList.SelectedItem;
+            if (a == null)
+            {
+                MessageBox.Show("Вы не выбрали объект!");
+                return;
+            }
             Library.ObjectList.Remove(a);
             a = null;
             formObjectsList.Items.Remove(formObjectsList.SelectedItem);
             formListInfoObject.Items.Clear();
             Library.CountOfObjects = --Library.CountOfObjects;
         }
-
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
-            Library a = (Library)formObjectsList.SelectedItem;
-            string[] arr = { "Название: "+a.Name,
+            try
+            {
+                Library a = (Library)formObjectsList.SelectedItem;
+                string[] arr = { "Название: "+a.Name,
                 "Адрес: " + a.Addres,
                 "Рейтинг: "+ a.Rating.ToString(),
                 "Номер телефона: "+ a.NumberOfPhone.ToString(),
                 "Количество книг: " + a.CountOfBooks.ToString(),
                 "Количество мест в читальном зале: " + a.CountOfSeats.ToString()};
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.AddRange(arr);
+                formListInfoObject.Items.Clear();
+                formListInfoObject.Items.AddRange(arr);
+            }
+            catch (LibraryException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch
+            {
+                MessageBox.Show("Вы не выбрали объект!");
+            }
         }
 
         private void buttonShowAdress_Click(object sender, EventArgs e)
         {
-            Library a = (Library)formObjectsList.SelectedItem;
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.Add("Адрес: "+a.Addres);
+            try
+            {
+                Library a = (Library)formObjectsList.SelectedItem;
+                formListInfoObject.Items.Clear();
+                formListInfoObject.Items.Add("Адрес: " + a.Addres);
+            }
+            catch (LibraryException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch
+            {
+                MessageBox.Show("Вы не выбрали объект!");
+            }
+
         }
 
         private void buttonShowNumberOfPhone_Click(object sender, EventArgs e)
         {
-            Library a = (Library)formObjectsList.SelectedItem;
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.Add("Номер телефона: " + a.NumberOfPhone);
+            try
+            {
+                Library a = (Library)formObjectsList.SelectedItem;
+                formListInfoObject.Items.Clear();
+                formListInfoObject.Items.Add("Номер телефона: " + a.NumberOfPhone);
+            }
+            catch (LibraryException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch
+            {
+                MessageBox.Show("Вы не выбрали объект!");
+            }
+
         }
 
         private void buttonShowCountOfSeats_Click(object sender, EventArgs e)
         {
-            Library a = (Library)formObjectsList.SelectedItem;
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.Add("Количество мест в читальном зале: " + a.CountOfSeats);
-        }
-
-        private void buttonShowRating_Click(object sender, EventArgs e)
-        {
-            Library a = (Library)formObjectsList.SelectedItem;
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.Add("Рейтинг: " + a.Rating);
-        }
-
-        private void buttonShowCountOfBooks_Click(object sender, EventArgs e)
-        {
-            Library a = (Library)formObjectsList.SelectedItem;
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
-        }
-
-        private void buttonChangeFields_Click(object sender, EventArgs e)
-        {
-            CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
-            DialogResult result = OneParametrForm.ShowDialog();
-            if (result == DialogResult.OK)
+            try
             {
-                formObjectsList.Items.Clear();
-                formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
                 Library a = (Library)formObjectsList.SelectedItem;
-                //a.Addres
+                formListInfoObject.Items.Clear();
+                formListInfoObject.Items.Add("Количество мест в читальном зале: " + a.CountOfSeats);
+            }
+            catch
+            {
+                try
+                {
+                    Library a = (Library)formObjectsList.SelectedItem;
+                    formListInfoObject.Items.Clear();
+                    formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+                }
+                catch
+                {
+                    MessageBox.Show("Вы не выбрали объект!");
+                }
+
+            }
+        }
+
+            private void buttonCreateTenObjects_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    Library.IWantToException(0);
+                }
+                catch (StackOverflowException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+            }
+            private void buttonShowRating_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    Library a = (Library)formObjectsList.SelectedItem;
+                    formListInfoObject.Items.Clear();
+                    formListInfoObject.Items.Add("Рейтинг: " + a.Rating);
+                }
+                catch
+                {
+                    MessageBox.Show("Вы не выбрали объект!");
+                }
+            }
+
+            private void buttonShowCountOfBooks_Click(object sender, EventArgs e)
+            {
+                Library a = (Library)formObjectsList.SelectedItem;
+                formListInfoObject.Items.Clear();
+                formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
             }
         }
     }
-}

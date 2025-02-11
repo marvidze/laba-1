@@ -156,6 +156,11 @@
             // numericUpDown_books
             // 
             this.numericUpDown_books.Location = new System.Drawing.Point(180, 150);
+            this.numericUpDown_books.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown_books.Name = "numericUpDown_books";
             this.numericUpDown_books.Size = new System.Drawing.Size(142, 20);
             this.numericUpDown_books.TabIndex = 15;
@@ -163,6 +168,11 @@
             // numericUpDown_place
             // 
             this.numericUpDown_place.Location = new System.Drawing.Point(180, 182);
+            this.numericUpDown_place.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown_place.Name = "numericUpDown_place";
             this.numericUpDown_place.Size = new System.Drawing.Size(142, 20);
             this.numericUpDown_place.TabIndex = 16;
