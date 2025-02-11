@@ -30,8 +30,8 @@
         {
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_createObject = new System.Windows.Forms.Button();
+            this.button_closeForm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_adress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,26 +64,26 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Название:";
             // 
-            // button1
+            // button_createObject
             // 
-            this.button1.Location = new System.Drawing.Point(12, 232);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Создать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_createObject.Location = new System.Drawing.Point(12, 232);
+            this.button_createObject.Name = "button_createObject";
+            this.button_createObject.Size = new System.Drawing.Size(75, 23);
+            this.button_createObject.TabIndex = 2;
+            this.button_createObject.Text = "Создать";
+            this.button_createObject.UseVisualStyleBackColor = true;
+            this.button_createObject.Click += new System.EventHandler(this.button_createObject_Click);
             // 
-            // button2
+            // button_closeForm
             // 
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(255, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Закрыть";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_closeForm.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button_closeForm.Location = new System.Drawing.Point(255, 232);
+            this.button_closeForm.Name = "button_closeForm";
+            this.button_closeForm.Size = new System.Drawing.Size(75, 23);
+            this.button_closeForm.TabIndex = 3;
+            this.button_closeForm.Text = "Закрыть";
+            this.button_closeForm.UseVisualStyleBackColor = false;
+            this.button_closeForm.Click += new System.EventHandler(this.button_closeForm_Click);
             // 
             // label2
             // 
@@ -182,13 +182,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_adress);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_closeForm);
+            this.Controls.Add(this.button_createObject);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_name);
             this.Name = "CreateOneParametrObject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Создание объекта с одним параметром";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_rating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_books)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_place)).EndInit();
@@ -201,8 +200,8 @@
 
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_createObject;
+        private System.Windows.Forms.Button button_closeForm;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_adress;
         private System.Windows.Forms.Label label3;
