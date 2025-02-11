@@ -47,6 +47,7 @@ namespace laba_1
             this.button_ChangeFields = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.formCountOfObjects = new System.Windows.Forms.Label();
+            this.buttonDontClick = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -235,7 +236,7 @@ namespace laba_1
             this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ChangeFields.Location = new System.Drawing.Point(648, 252);
+            this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
             this.button_ChangeFields.Name = "button_ChangeFields";
             this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
             this.button_ChangeFields.TabIndex = 0;
@@ -258,12 +259,27 @@ namespace laba_1
             this.formCountOfObjects.AutoSize = true;
             this.formCountOfObjects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.formCountOfObjects.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.formCountOfObjects.Location = new System.Drawing.Point(781, 498);
+            this.formCountOfObjects.Location = new System.Drawing.Point(776, 498);
             this.formCountOfObjects.Name = "formCountOfObjects";
             this.formCountOfObjects.Size = new System.Drawing.Size(34, 39);
             this.formCountOfObjects.TabIndex = 6;
             this.formCountOfObjects.Text = "0";
             this.formCountOfObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonDontClick
+            // 
+            this.buttonDontClick.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonDontClick.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDontClick.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonDontClick.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDontClick.Location = new System.Drawing.Point(816, 498);
+            this.buttonDontClick.Name = "buttonDontClick";
+            this.buttonDontClick.Size = new System.Drawing.Size(79, 41);
+            this.buttonDontClick.TabIndex = 0;
+            this.buttonDontClick.Text = "НЕ НАЖИМАТЬ";
+            this.buttonDontClick.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonDontClick.UseVisualStyleBackColor = false;
+            this.buttonDontClick.Click += new System.EventHandler(this.button_DontClick_Click);
             // 
             // MainForm
             // 
@@ -281,6 +297,7 @@ namespace laba_1
             this.Controls.Add(this.buttonShowRating);
             this.Controls.Add(this.buttonShowCountOfBooks);
             this.Controls.Add(this.buttonShowCountOfSeats);
+            this.Controls.Add(this.buttonDontClick);
             this.Controls.Add(this.button_ChangeFields);
             this.Controls.Add(this.buttonShowNumberOfPhone);
             this.Controls.Add(this.buttonShowAddres);
@@ -315,5 +332,6 @@ namespace laba_1
         private Button button_ChangeFields;
         private Label label3;
         private Label formCountOfObjects;
+        private Button buttonDontClick;
     }
 }

@@ -138,18 +138,6 @@ namespace laba_1
             }
         }
 
-        private void buttonCreateTenObjects_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Library.IWantToException(0);
-            }
-            catch (StackOverflowException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void buttonShowRating_Click(object sender, EventArgs e)
         {
             try
@@ -186,6 +174,18 @@ namespace laba_1
         private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_DontClick_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Library.IWantToException(0);
+            }
+            catch (StackOverflowException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -86,6 +86,11 @@ namespace laba_1
             return $"{_name}";
         }
 
+        /// <summary>
+        /// Метод для переполнения стека
+        /// </summary>
+        /// <param name="count"></param>
+        /// <exception cref="StackOverflowException"></exception>
         public static void IWantToException(int count)
         {
             if (count > 1000)
