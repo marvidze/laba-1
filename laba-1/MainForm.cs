@@ -34,6 +34,7 @@ namespace laba_1
             {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
             }
         }
         
@@ -50,6 +51,7 @@ namespace laba_1
             formObjectsList.Items.Remove(formObjectsList.SelectedItem);
             formListInfoObject.Items.Clear();
             Library.CountOfObjects = --Library.CountOfObjects;
+            formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
@@ -123,21 +125,16 @@ namespace laba_1
             }
             catch
             {
-                MessageBox.Show("Вы не выбрали объект!");
-            }
-        }
-
-        private void buttonShowRating_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Library a = (Library)formObjectsList.SelectedItem;
-                formListInfoObject.Items.Clear();
-                formListInfoObject.Items.Add("Рейтинг: " + a.Rating);
-            }
-            catch
-            {
-                MessageBox.Show("Вы не выбрали объект!");
+                try
+                {
+                    Library a = (Library)formObjectsList.SelectedItem;
+                    formListInfoObject.Items.Clear();
+                    formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+                }
+                catch
+                {
+                    MessageBox.Show("Вы не выбрали объект!");
+                }
             }
         }
 
@@ -151,12 +148,8 @@ namespace laba_1
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-        private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
         private void buttonShowRating_Click(object sender, EventArgs e)
         {
             try
@@ -173,36 +166,26 @@ namespace laba_1
 
         private void buttonShowCountOfBooks_Click(object sender, EventArgs e)
         {
-            try
+            Library a = (Library)formObjectsList.SelectedItem;
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+        }
+        private void buttonChangeFields_Click(object sender, EventArgs e)
+        {
+            CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
+            DialogResult result = OneParametrForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
                 Library a = (Library)formObjectsList.SelectedItem;
-                formListInfoObject.Items.Clear();
-                formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
-            }
-            catch
-            {
-                MessageBox.Show("Вы не выбрали объект!");
+                //a.Addres
             }
         }
 
-        private void button_ChangeFields_Click(object sender, EventArgs e)
+        private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Library item = (Library)formObjectsList.SelectedItem;
-                CreateOneParametrObject OneParametrForm = new CreateOneParametrObject(item);
-                DialogResult result = OneParametrForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    formObjectsList.Items.Clear();
-                    formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
-                    Library a = (Library)formObjectsList.SelectedItem;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Вы не выбрали объект!");
-            }
+
         }
     }
 }
