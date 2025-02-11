@@ -44,6 +44,9 @@ namespace laba_1
             this.buttonShowCountOfBooks = new System.Windows.Forms.Button();
             this.buttonShowRating = new System.Windows.Forms.Button();
             this.buttonChangeFields = new System.Windows.Forms.Button();
+            this.button_ChangeFields = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.formCountOfObjects = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -66,7 +69,7 @@ namespace laba_1
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExit.Location = new System.Drawing.Point(642, 613);
+            this.buttonExit.Location = new System.Drawing.Point(643, 613);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(167, 36);
             this.buttonExit.TabIndex = 0;
@@ -212,20 +215,6 @@ namespace laba_1
             this.buttonShowRating.UseVisualStyleBackColor = false;
             this.buttonShowRating.Click += new System.EventHandler(this.buttonShowRating_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(555, 352);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 67);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "НЕ НАЖИМАТЬ!";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.buttonCreateTenObjects_Click);
-            // 
             // buttonChangeFields
             // 
             this.buttonChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -240,12 +229,50 @@ namespace laba_1
             this.buttonChangeFields.UseVisualStyleBackColor = false;
             this.buttonChangeFields.Click += new System.EventHandler(this.buttonChangeFields_Click);
             // 
+            // button_ChangeFields
+            // 
+            this.button_ChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
+            this.button_ChangeFields.Name = "button_ChangeFields";
+            this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
+            this.button_ChangeFields.TabIndex = 0;
+            this.button_ChangeFields.Text = "Изменить поля";
+            this.button_ChangeFields.UseVisualStyleBackColor = false;
+            this.button_ChangeFields.Click += new System.EventHandler(this.buttonChangeFields_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(551, 506);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(224, 21);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Счётчик созданных объектов:";
+            // 
+            // formCountOfObjects
+            // 
+            this.formCountOfObjects.AutoSize = true;
+            this.formCountOfObjects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.formCountOfObjects.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.formCountOfObjects.Location = new System.Drawing.Point(781, 498);
+            this.formCountOfObjects.Name = "formCountOfObjects";
+            this.formCountOfObjects.Size = new System.Drawing.Size(34, 39);
+            this.formCountOfObjects.TabIndex = 6;
+            this.formCountOfObjects.Text = "0";
+            this.formCountOfObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(904, 661);
+            this.Controls.Add(this.formCountOfObjects);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formListInfoObject);
@@ -254,6 +281,7 @@ namespace laba_1
             this.Controls.Add(this.buttonShowRating);
             this.Controls.Add(this.buttonShowCountOfBooks);
             this.Controls.Add(this.buttonShowCountOfSeats);
+            this.Controls.Add(this.button_ChangeFields);
             this.Controls.Add(this.buttonShowNumberOfPhone);
             this.Controls.Add(this.buttonShowAddres);
             this.Controls.Add(this.buttonShowAllParametrs);
@@ -285,5 +313,8 @@ namespace laba_1
         private System.Windows.Forms.Button buttonShowRating;
         private Button buttonChangeFields;
         private System.Windows.Forms.Button button1;
+        private Button button_ChangeFields;
+        private Label label3;
+        private Label formCountOfObjects;
     }
 }
