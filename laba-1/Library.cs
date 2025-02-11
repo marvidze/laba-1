@@ -57,7 +57,6 @@ namespace laba_1
         /// <param name="addres">Адрес библиотеки</param>
         public Library(string name, string addres) : this(name) 
         { 
-            _countOfObjects++;
             _addres = addres;
         }
 
@@ -71,8 +70,7 @@ namespace laba_1
         /// <param name="countOfBooks">Количество книг в библиотеке</param>
         /// <param name="countOfSeats">Количество мест в читальном зале</param>
         public Library(string name, string addres, string numberOfPhone, float rating, int countOfBooks, int countOfSeats) : this(name, addres)
-        {
-            _countOfObjects++;
+        {   
             _numberOfPhone = numberOfPhone;
             _rating = rating;
             _countOfBooks = countOfBooks;

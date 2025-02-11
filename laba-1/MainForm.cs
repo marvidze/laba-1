@@ -34,6 +34,7 @@ namespace laba_1
             {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
             }
         }
 
@@ -50,6 +51,7 @@ namespace laba_1
             formObjectsList.Items.Remove(formObjectsList.SelectedItem);
             formListInfoObject.Items.Clear();
             Library.CountOfObjects = --Library.CountOfObjects;
+            formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
@@ -133,7 +135,6 @@ namespace laba_1
                 {
                     MessageBox.Show("Вы не выбрали объект!");
                 }
-
             }
         }
 
@@ -147,12 +148,8 @@ namespace laba_1
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-        private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
         private void buttonShowRating_Click(object sender, EventArgs e)
         {
             try
