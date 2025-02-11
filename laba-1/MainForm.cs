@@ -65,7 +65,11 @@ namespace laba_1
                 formListInfoObject.Items.Clear();
                 formListInfoObject.Items.AddRange(arr);
             }
-            catch 
+            catch (LibraryException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch
             {
                 MessageBox.Show("Вы не выбрали объект!");
             }
@@ -78,7 +82,13 @@ namespace laba_1
                 Library a = (Library)formObjectsList.SelectedItem;
                 formListInfoObject.Items.Clear();
                 formListInfoObject.Items.Add("Адрес: " + a.Addres);
-            } catch {
+            }
+            catch (LibraryException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch 
+            {
                 MessageBox.Show("Вы не выбрали объект!");
             }
             
@@ -91,7 +101,13 @@ namespace laba_1
                 Library a = (Library)formObjectsList.SelectedItem;
                 formListInfoObject.Items.Clear();
                 formListInfoObject.Items.Add("Номер телефона: " + a.NumberOfPhone);
-            } catch {
+            }
+            catch (LibraryException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch
+            {
                 MessageBox.Show("Вы не выбрали объект!");
             }
 
