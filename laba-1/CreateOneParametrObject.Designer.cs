@@ -42,6 +42,7 @@
             this.numericUpDown_rating = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_books = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_place = new System.Windows.Forms.NumericUpDown();
+            this.button_change = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_rating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_books)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_place)).BeginInit();
@@ -177,11 +178,22 @@
             this.numericUpDown_place.Size = new System.Drawing.Size(142, 20);
             this.numericUpDown_place.TabIndex = 16;
             // 
+            // button_change
+            // 
+            this.button_change.Location = new System.Drawing.Point(12, 232);
+            this.button_change.Name = "button_change";
+            this.button_change.Size = new System.Drawing.Size(75, 23);
+            this.button_change.TabIndex = 1;
+            this.button_change.Text = "Применить";
+            this.button_change.UseVisualStyleBackColor = true;
+            this.button_change.Click += new System.EventHandler(this.button_change_Click);
+            // 
             // CreateOneParametrObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 267);
+            this.Controls.Add(this.button_change);
             this.Controls.Add(this.numericUpDown_place);
             this.Controls.Add(this.numericUpDown_books);
             this.Controls.Add(this.numericUpDown_rating);
@@ -198,6 +210,7 @@
             this.Controls.Add(this.textBox_name);
             this.Name = "CreateOneParametrObject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.CreateOneParametrObject_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_rating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_books)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_place)).EndInit();
@@ -222,5 +235,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown_rating;
         private System.Windows.Forms.NumericUpDown numericUpDown_books;
         private System.Windows.Forms.NumericUpDown numericUpDown_place;
+        private System.Windows.Forms.Button button_change;
     }
 }
