@@ -235,27 +235,13 @@ namespace laba_1
             this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ChangeFields.Location = new System.Drawing.Point(642, 252);
-            this.button_ChangeFields.Name = "button_ChangeFields";
-            this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
-            this.button_ChangeFields.TabIndex = 5;
-            this.button_ChangeFields.Text = "Редактировать поля ";
-            this.button_ChangeFields.UseVisualStyleBackColor = false;
-            this.button_ChangeFields.Click += new System.EventHandler(this.button_ChangeFields_Click);
-            // 
-            // button_ChangeFields
-            // 
-            this.button_ChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
+            this.button_ChangeFields.Location = new System.Drawing.Point(648, 252);
             this.button_ChangeFields.Name = "button_ChangeFields";
             this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
             this.button_ChangeFields.TabIndex = 0;
             this.button_ChangeFields.Text = "Изменить поля";
             this.button_ChangeFields.UseVisualStyleBackColor = false;
-            this.button_ChangeFields.Click += new System.EventHandler(this.buttonChangeFields_Click);
+            this.button_ChangeFields.Click += new System.EventHandler(this.button_ChangeFields_Click);
             // 
             // label3
             // 
@@ -326,7 +312,6 @@ namespace laba_1
         private System.Windows.Forms.Button buttonShowCountOfBooks;
         private System.Windows.Forms.Button buttonShowRating;
         private Button buttonChangeFields;
-        private System.Windows.Forms.Button button1;
         private Button button_ChangeFields;
         private Label label3;
         private Label formCountOfObjects;
