@@ -62,7 +62,7 @@ namespace laba_1
             this.buttonCreateObjectOneParametr.TabIndex = 0;
             this.buttonCreateObjectOneParametr.Text = "Создать объект ";
             this.buttonCreateObjectOneParametr.UseVisualStyleBackColor = false;
-            this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.buttonCreateObjectOneParametr_Click);
+            this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.buttonCreateObjectAllParametr_Click);
             // 
             // buttonExit
             // 
@@ -239,20 +239,6 @@ namespace laba_1
             this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
             this.button_ChangeFields.Name = "button_ChangeFields";
             this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
-            this.button_ChangeFields.TabIndex = 5;
-            this.button_ChangeFields.Text = "Редактировать поля ";
-            this.button_ChangeFields.UseVisualStyleBackColor = false;
-            this.button_ChangeFields.Click += new System.EventHandler(this.button_ChangeFields_Click);
-            // 
-            // button_ChangeFields
-            // 
-            this.button_ChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
-            this.button_ChangeFields.Name = "button_ChangeFields";
-            this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
             this.button_ChangeFields.TabIndex = 0;
             this.button_ChangeFields.Text = "Изменить поля";
             this.button_ChangeFields.UseVisualStyleBackColor = false;
@@ -321,7 +307,7 @@ namespace laba_1
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

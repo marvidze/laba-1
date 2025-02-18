@@ -10,7 +10,7 @@ namespace laba_1
 {
     public class Library
     {
-        private static List<Library> _objectList = new List<Library>();
+        
 
         public string Name { get; set; }
         public string Addres { get ; set; } = "Отсутствует значение";
@@ -20,7 +20,7 @@ namespace laba_1
         public int CountOfSeats { get; set; } = 0;
         public int Id { get; set; } = 0;
         public static int CountOfObjects { get; set; } = 0;
-        public static List<Library> ObjectList { get => _objectList; set => _objectList = value; }
+        
 
         /// <summary>
         /// Конструктор по-умолчанию для класса Library
@@ -37,13 +37,13 @@ namespace laba_1
         /// <param name="name">Имя библиотеки</param>
         public Library(string name)
         {
+            Id++;
             CountOfObjects++;
             Name = name;
         }
 
         public Library(String name, String addres)
         {
-            CountOfObjects++;
             Name = name;
             Addres = addres;
         }
