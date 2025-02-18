@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,44 +22,55 @@ namespace laba_1
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr MessageBox(int hWnd, string text, string caption, uint type);
+
+        private void UpdateObjectList()
         {
-         
+            formObjectsList.Items.Clear();
+            formObjectsList.Items.AddRange(LibraryList.objects.ToArray());
+            formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void buttonCreateObjectOneParametr_Click(object sender, EventArgs e)
+        private void buttonCreateObjectAllParametr_Click(object sender, EventArgs e)
         {
             CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
             DialogResult result = OneParametrForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                formObjectsList.Items.Clear();
-                formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
-                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                UpdateObjectList();
             }
         }
+
         
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+       
+
         private void buttonDeleteObject_Click(object sender, EventArgs e)
         {
             Library a = (Library)formObjectsList.SelectedItem;
-            if(a == null)
+            try             
             {
-                MessageBox.Show("Вы не выбрали объект!");
-                return;
+                if (a == null)
+                {
+                    throw new Exception("Вы не выбрали объект ");
+                }
+                LibraryList.objects.Remove(a);
+                a = null;
+                formObjectsList.Items.Remove(formObjectsList.SelectedItem);
+                formListInfoObject.Items.Clear();
+                Library.CountOfObjects = --Library.CountOfObjects;
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
             }
-            Library.ObjectList.Remove(a);
-            a = null;
-            formObjectsList.Items.Remove(formObjectsList.SelectedItem);
-            formListInfoObject.Items.Clear();
-            Library.CountOfObjects = --Library.CountOfObjects;
-            formCountOfObjects.Text = Library.CountOfObjects.ToString();
+            catch (Exception ex)
+            {
+                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
+            }
+            
         }
-
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
             try
@@ -74,11 +87,11 @@ namespace laba_1
             }
             catch (LibraryException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
             catch
             {
-                MessageBox.Show("Вы не выбрали объект!");
+                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -92,11 +105,11 @@ namespace laba_1
             }
             catch (LibraryException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
             catch 
             {
-                MessageBox.Show("Вы не выбрали объект!");
+                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
             }
             
         }
@@ -111,11 +124,11 @@ namespace laba_1
             }
             catch (LibraryException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
             catch
             {
-                MessageBox.Show("Вы не выбрали объект!");
+                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -137,7 +150,7 @@ namespace laba_1
                 }
                 catch
                 {
-                    MessageBox.Show("Вы не выбрали объект!");
+                    MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
                 }
             }
         }
@@ -152,32 +165,42 @@ namespace laba_1
             }
             catch
             {
-                MessageBox.Show("Вы не выбрали объект!");
+                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
         private void buttonShowCountOfBooks_Click(object sender, EventArgs e)
         {
-            Library a = (Library)formObjectsList.SelectedItem;
-            formListInfoObject.Items.Clear();
-            formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
-        }
-        private void buttonChangeFields_Click(object sender, EventArgs e)
-        {
-            CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
-            DialogResult result = OneParametrForm.ShowDialog();
-            if (result == DialogResult.OK)
+            try
             {
-                formObjectsList.Items.Clear();
-                formObjectsList.Items.AddRange(Library.ObjectList.ToArray());
                 Library a = (Library)formObjectsList.SelectedItem;
-                //a.Addres
+                formListInfoObject.Items.Clear();
+                formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+            }
+            catch
+            {
+                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
-        private void formListObjects_SelectedIndexChanged(object sender, EventArgs e)
+        private void button_ChangeFields_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Library item = (Library)formObjectsList.SelectedItem;
+                CreateOneParametrObject OneParametrForm = new CreateOneParametrObject(item);
+                DialogResult result = OneParametrForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formObjectsList.Items.Clear();
+                    formObjectsList.Items.AddRange(LibraryList.objects.ToArray());
+                    Library a = (Library)formObjectsList.SelectedItem;
+                }
+            }
+            catch
+            {
+                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+            }
         }
 
         private void button_DontClick_Click(object sender, EventArgs e)
@@ -188,8 +211,10 @@ namespace laba_1
             }
             catch (StackOverflowException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
         }
+
+        
     }
 }

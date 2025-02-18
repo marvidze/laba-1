@@ -14,7 +14,7 @@ namespace laba_1
     public partial class CreateOneParametrObject : Form
     {
         private Library _item;
-        private string defaultName = "0";
+        private string defaultName = "Библиотека";
         private string defaultAdress = "0";
         private float defaultRating = 0;
         private string defaultTel = "0";
@@ -58,7 +58,7 @@ namespace laba_1
             string Tel = textBox_tel.Text;
             int Books = (int)numericUpDown_books.Value;
             int Place = (int)numericUpDown_place.Value;
-            Library.ObjectList.Add(new Library(Name, Adress, Tel, Rating, Books, Place));
+            LibraryList.objects.Add(new Library(Name, Adress, Tel, Rating, Books, Place));
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

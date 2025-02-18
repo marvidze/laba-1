@@ -63,7 +63,7 @@ namespace laba_1
             this.buttonCreateObjectOneParametr.TabIndex = 0;
             this.buttonCreateObjectOneParametr.Text = "Создать объект ";
             this.buttonCreateObjectOneParametr.UseVisualStyleBackColor = false;
-            this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.buttonCreateObjectOneParametr_Click);
+            this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.buttonCreateObjectAllParametr_Click);
             // 
             // buttonExit
             // 
@@ -301,8 +301,8 @@ namespace laba_1
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LIBRARY";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LIBRARY";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Text = "MainForm";
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
