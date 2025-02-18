@@ -11,8 +11,8 @@ namespace laba_1
     public class Library
     {
         private string _name;
-        private string _addres = "";
-        private string _numberOfPhone = "";
+        private string _addres = "Отсутствует значение";
+        private string _numberOfPhone = "Отсутствует значение";
         private float _rating = 0;
         private int _countOfBooks = 0;
         private int _countOfSeats = 0;
@@ -20,15 +20,14 @@ namespace laba_1
         private static int _countOfObjects = 0;
         private static List<Library> _objectList = new List<Library>();
 
-        public string Name { get => _name; set => _name = value; }
-        public string Addres {  get => _addres == "" ? throw new LibraryException("Отсутствует значение адреса!") : _addres; 
-            set => _addres = value; }
-        public string NumberOfPhone { get => _numberOfPhone == "" ? throw new LibraryException("Отсутствует значение номера телефона!") : _numberOfPhone;
-            set => _numberOfPhone = value; }
-        public float Rating { get => _rating; set => _rating = value; }
-        public int CountOfBooks { get => _countOfBooks; set => _countOfBooks = value; }
-        public int CountOfSeats { get => _countOfSeats; set => _countOfSeats = value; }
-        public int Id { get => _id; set => _id = value; }
+        public string Name { get; set; }
+        public string Addres { get ; set; } = "Отсутствует значение";
+        public string NumberOfPhone { get ; set; } = "Отсутствует значение";
+        public float Rating { get ; set ; } = 0;
+        public int CountOfBooks { get; set; } = 0;
+        public int CountOfSeats { get; set; } = 0;
+        public int Id { get; set; } = 0;
+        public static int CountOfObjects { get; set; } = 0;
         public static List<Library> ObjectList { get => _objectList; set => _objectList = value; }
         public static int CountOfObjects { get => _countOfObjects; set => _countOfObjects = value; }
 
@@ -37,9 +36,9 @@ namespace laba_1
         /// </summary>
         public Library()
         {
-            _countOfObjects++;
-            _id = _countOfBooks;
-            _name = "Библиотека №" + _countOfObjects.ToString();
+            CountOfObjects++;
+            Id++;
+            Name = "Библиотека №" + CountOfObjects.ToString();
         }
         /// <summary>
         /// Конструктор с одним параметром для класса Library 
@@ -47,17 +46,15 @@ namespace laba_1
         /// <param name="name">Имя библиотеки</param>
         public Library(string name)
         {
-            _countOfObjects++;
-            _name = name;
+            CountOfObjects++;
+            Name = name;
         }
-        /// <summary>
-        /// Конструктор с двумя параметрами для класса Library 
-        /// </summary>
-        /// <param name="name">Имя библиотеки</param>
-        /// <param name="addres">Адрес библиотеки</param>
-        public Library(string name, string addres) : this(name) 
-        { 
-            _addres = addres;
+
+        public Library(String name, String addres)
+        {
+            CountOfObjects++;
+            Name = name;
+            Addres = addres;
         }
 
         /// <summary>
@@ -70,11 +67,12 @@ namespace laba_1
         /// <param name="countOfBooks">Количество книг в библиотеке</param>
         /// <param name="countOfSeats">Количество мест в читальном зале</param>
         public Library(string name, string addres, string numberOfPhone, float rating, int countOfBooks, int countOfSeats) : this(name, addres)
-        {   
-            _numberOfPhone = numberOfPhone;
-            _rating = rating;
-            _countOfBooks = countOfBooks;
-            _countOfSeats = countOfSeats;
+        {
+            CountOfObjects++;
+            NumberOfPhone = numberOfPhone;
+            Rating = rating;
+            CountOfBooks = countOfBooks;
+            CountOfSeats = countOfSeats;
         }
 
         /// <summary>
@@ -83,7 +81,7 @@ namespace laba_1
         /// <returns>Возвращает строку, содержащую всю информацию о библиотеке.</returns>
         public override string ToString()
         {
-            return $"{_name}";
+            return $"{Name}";
         }
 
         /// <summary>
