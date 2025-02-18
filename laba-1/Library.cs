@@ -21,15 +21,22 @@ namespace laba_1
         public int Id { get; set; } = 0;
         public static int CountOfObjects { get; set; } = 0;
         public static List<Library> ObjectList { get => _objectList; set => _objectList = value; }
+        public static int CountOfObjects { get => _countOfObjects; set => _countOfObjects = value; }
 
+        /// <summary>
+        /// Конструктор по-умолчанию для класса Library
+        /// </summary>
         public Library()
         {
             CountOfObjects++;
             Id++;
             Name = "Библиотека №" + CountOfObjects.ToString();
         }
-
-        public Library(String name)
+        /// <summary>
+        /// Конструктор с одним параметром для класса Library 
+        /// </summary>
+        /// <param name="name">Имя библиотеки</param>
+        public Library(string name)
         {
             CountOfObjects++;
             Name = name;
@@ -42,6 +49,15 @@ namespace laba_1
             Addres = addres;
         }
 
+        /// <summary>
+        /// Конструктор со всеми параметрами для класса Library
+        /// </summary>
+        /// <param name="name">Имя библиотеки</param>
+        /// <param name="addres">Адрес библиотеки</param>
+        /// <param name="numberOfPhone">Номер телефона библиотеки</param>
+        /// <param name="rating">Рейтинг библиотеки</param>
+        /// <param name="countOfBooks">Количество книг в библиотеке</param>
+        /// <param name="countOfSeats">Количество мест в читальном зале</param>
         public Library(string name, string addres, string numberOfPhone, float rating, int countOfBooks, int countOfSeats) : this(name, addres)
         {
             CountOfObjects++;
@@ -58,6 +74,20 @@ namespace laba_1
         public override string ToString()
         {
             return $"{Name}";
+        }
+
+        /// <summary>
+        /// Метод для переполнения стека
+        /// </summary>
+        /// <param name="count"></param>
+        /// <exception cref="StackOverflowException"></exception>
+        public static void IWantToException(int count)
+        {
+            if (count > 1000)
+            {
+                throw new StackOverflowException("Стек переполнен!");
+            }
+            IWantToException(count+1);
         }
     }
 }
