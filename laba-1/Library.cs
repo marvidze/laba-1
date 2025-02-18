@@ -29,7 +29,6 @@ namespace laba_1
         public int Id { get; set; } = 0;
         public static int CountOfObjects { get; set; } = 0;
         public static List<Library> ObjectList { get => _objectList; set => _objectList = value; }
-        public static int CountOfObjects { get => _countOfObjects; set => _countOfObjects = value; }
 
         /// <summary>
         /// Конструктор по-умолчанию для класса Library
