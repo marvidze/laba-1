@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace laba_1
 {
     internal static class Program
@@ -20,7 +21,7 @@ namespace laba_1
             WelcomeForm welcomeForm = new WelcomeForm();
             Application.Run(welcomeForm);
 
-            MainForm mainForm = new MainForm();
+            LIBRARY mainForm = new LIBRARY();
             Application.Run(mainForm);
         }
     }

@@ -2,7 +2,7 @@
 
 namespace laba_1
 {
-    partial class MainForm
+    partial class LIBRARY
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@ namespace laba_1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LIBRARY));
             this.buttonCreateObjectOneParametr = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.formObjectsList = new System.Windows.Forms.ListBox();
@@ -218,31 +219,10 @@ namespace laba_1
             // 
             // buttonChangeFields
             // 
-            this.buttonChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonChangeFields.Location = new System.Drawing.Point(642, 252);
+            this.buttonChangeFields.Location = new System.Drawing.Point(0, 0);
             this.buttonChangeFields.Name = "buttonChangeFields";
-            this.buttonChangeFields.Size = new System.Drawing.Size(167, 67);
-            this.buttonChangeFields.TabIndex = 5;
-            this.buttonChangeFields.Text = "Изменить поля";
-            this.buttonChangeFields.UseVisualStyleBackColor = false;
-            this.buttonChangeFields.Click += new System.EventHandler(this.button_ChangeFields_Click);
-            // 
-            // button_ChangeFields
-            // 
-            this.button_ChangeFields.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
-            this.button_ChangeFields.Name = "button_ChangeFields";
-            this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
-            this.button_ChangeFields.TabIndex = 5;
-            this.button_ChangeFields.Text = "Редактировать поля ";
-            this.button_ChangeFields.UseVisualStyleBackColor = false;
-            this.button_ChangeFields.Click += new System.EventHandler(this.button_ChangeFields_Click);
+            this.buttonChangeFields.Size = new System.Drawing.Size(75, 23);
+            this.buttonChangeFields.TabIndex = 0;
             // 
             // button_ChangeFields
             // 
@@ -295,7 +275,7 @@ namespace laba_1
             this.buttonDontClick.UseVisualStyleBackColor = false;
             this.buttonDontClick.Click += new System.EventHandler(this.button_DontClick_Click);
             // 
-            // MainForm
+            // LIBRARY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -318,9 +298,10 @@ namespace laba_1
             this.Controls.Add(this.buttonShowAllParametrs);
             this.Controls.Add(this.buttonDeleteObject);
             this.Controls.Add(this.buttonExit);
-            this.Name = "MainForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "LIBRARY";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "LIBRARY";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
