@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace laba_1
 {
-    public partial class MainForm : Form
+    public partial class LIBRARY : Form
     {
-        
-        public MainForm()
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern void SetWindowText(int hWnd, String text);
+        public LIBRARY()
         {
             InitializeComponent();
         }
@@ -22,10 +24,12 @@ namespace laba_1
         {
          
         }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         private void buttonCreateObjectOneParametr_Click(object sender, EventArgs e)
         {
             CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
@@ -53,6 +57,7 @@ namespace laba_1
             Library.CountOfObjects = --Library.CountOfObjects;
             formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
+
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
             try
@@ -112,7 +117,6 @@ namespace laba_1
             {
                 MessageBox.Show("Вы не выбрали объект!");
             }
-
         }
 
         private void buttonShowCountOfSeats_Click(object sender, EventArgs e)
