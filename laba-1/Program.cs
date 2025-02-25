@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace laba_1
 {
     internal static class Program
@@ -16,7 +17,12 @@ namespace laba_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            WelcomeForm welcomeForm = new WelcomeForm();
+            Application.Run(welcomeForm);
+
+            MainForm mainForm = new MainForm();
+            Application.Run(mainForm);
         }
     }
 }

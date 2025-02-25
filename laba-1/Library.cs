@@ -10,59 +10,60 @@ namespace laba_1
 {
     public class Library
     {
-        private string _name;
-        private string _addres = "Отсутствует значение";
-        private string _numberOfPhone = "";
-        private float _rating = 0;
-        private int _countOfBooks = 0;
-        private int _countOfSeats = 0;
-        private static int _countOfObjects = 0;
+        
 
-        public string Name { get => _name; set => _name = value; }
-        public string Addres { get => _addres; set => _addres = value; }
-        public string NumberOfPhone { get => _numberOfPhone; set => _numberOfPhone = value; }
-        public float Rating { get => _rating; set => _rating = value; }
-        public int CountOfBooks { get => _countOfBooks; set => _countOfBooks = value; }
-        public int CountOfSeats { get => _countOfSeats; set => _countOfSeats = value; }
+        public string Name { get; set; }
+        public string Addres { get ; set; } = "Отсутствует значение";
+        public string NumberOfPhone { get ; set; } = "Отсутствует значение";
+        public float Rating { get ; set ; } = 0;
+        public int CountOfBooks { get; set; } = 0;
+        public int CountOfSeats { get; set; } = 0;
+        public int Id { get; set; } = 0;
+        public static int CountOfObjects { get; set; } = 0;
+        
 
+        /// <summary>
+        /// Конструктор по-умолчанию для класса Library
+        /// </summary>
         public Library()
         {
-            _countOfObjects++;
-            _name = "Библиотека №" + _countOfObjects.ToString();
+            CountOfObjects++;
+            Id++;
+            Name = "Библиотека №" + CountOfObjects.ToString();
         }
-
-        public Library(String name)
+        /// <summary>
+        /// Конструктор с одним параметром для класса Library 
+        /// </summary>
+        /// <param name="name">Имя библиотеки</param>
+        public Library(string name)
         {
-            _countOfObjects++;
-            _name = name;
+            Id++;
+            CountOfObjects++;
+            Name = name;
         }
 
         public Library(String name, String addres)
         {
-            _countOfObjects++;
-            _name = name;
-            _addres = addres;
+            Name = name;
+            Addres = addres;
         }
 
+        /// <summary>
+        /// Конструктор со всеми параметрами для класса Library
+        /// </summary>
+        /// <param name="name">Имя библиотеки</param>
+        /// <param name="addres">Адрес библиотеки</param>
+        /// <param name="numberOfPhone">Номер телефона библиотеки</param>
+        /// <param name="rating">Рейтинг библиотеки</param>
+        /// <param name="countOfBooks">Количество книг в библиотеке</param>
+        /// <param name="countOfSeats">Количество мест в читальном зале</param>
         public Library(string name, string addres, string numberOfPhone, float rating, int countOfBooks, int countOfSeats) : this(name, addres)
         {
-            _countOfObjects++;
-            _numberOfPhone = numberOfPhone;
-            _rating = rating;
-            _countOfBooks = countOfBooks;
-            _countOfSeats = countOfSeats;
-        }
-
-        public void printName () {
-            Console.WriteLine($"Name = {_name}.\n");
-        }
-        public void printAdress()
-        {
-            Console.WriteLine($"Adress = {_addres}.\n");
-        }
-        public void printPhone()
-        {
-            Console.WriteLine($"Phone: {_numberOfPhone}.\n");
+            CountOfObjects++;
+            NumberOfPhone = numberOfPhone;
+            Rating = rating;
+            CountOfBooks = countOfBooks;
+            CountOfSeats = countOfSeats;
         }
 
         /// <summary>
@@ -71,7 +72,21 @@ namespace laba_1
         /// <returns>Возвращает строку, содержащую всю информацию о библиотеке.</returns>
         public override string ToString()
         {
-            return $"Name = {_name},\n Age = {_addres},\n Phone: {_numberOfPhone},\n Rating = {_rating},\n Books: {_countOfBooks},\n Seats: {_countOfSeats}.\n";
+            return $"{Name}";
+        }
+
+        /// <summary>
+        /// Метод для переполнения стека
+        /// </summary>
+        /// <param name="count"></param>
+        /// <exception cref="StackOverflowException"></exception>
+        public static void IWantToException(int count)
+        {
+            if (count > 1000)
+            {
+                throw new StackOverflowException("Стек переполнен!");
+            }
+            IWantToException(count+1);
         }
     }
 }
