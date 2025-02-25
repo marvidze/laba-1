@@ -21,7 +21,7 @@ namespace laba_1
             WelcomeForm welcomeForm = new WelcomeForm();
             Application.Run(welcomeForm);
 
-            LIBRARY mainForm = new LIBRARY();
+            MainForm mainForm = new MainForm();
             Application.Run(mainForm);
         }
     }

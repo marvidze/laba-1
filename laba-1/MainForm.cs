@@ -13,22 +13,38 @@ using System.Windows.Forms;
 
 namespace laba_1
 {
-    public partial class LIBRARY : Form
+    public partial class MainForm : Form
     {
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern void SetWindowText(int hWnd, String text);
-        public LIBRARY()
-        {
-            InitializeComponent();
-        }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr MessageBox(int hWnd, string text, string caption, uint type);
 
-        private void UpdateObjectList()
+        // Список экземпляров класса Library
+        public static LibrariesList libraries = new LibrariesList();
+
+        public MainForm()
+        {
+            InitializeComponent();
+
+            libraries.OnAddingLibrary += library => {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(libraries.ToArray());
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+            };
+
+            libraries.OnDeletingLibrary += library => {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(libraries.ToArray());
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+            };
+        }
+
+        private void UpdateObjectList(Library library)
         {
             formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(LibraryList.objects.ToArray());
+            formObjectsList.Items.AddRange(libraries.ToArray());
             formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
 
@@ -36,18 +52,12 @@ namespace laba_1
         {
             CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
             DialogResult result = OneParametrForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                UpdateObjectList();
-            }
         }
-
         
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
         }
-       
 
         private void buttonDeleteObject_Click(object sender, EventArgs e)
         {
@@ -58,11 +68,9 @@ namespace laba_1
                 {
                     throw new Exception("Вы не выбрали объект ");
                 }
-                LibraryList.objects.Remove(a);
+                libraries.Remove(a);
                 a = null;
-                formObjectsList.Items.Remove(formObjectsList.SelectedItem);
-                formListInfoObject.Items.Clear();
-                Library.CountOfObjects = --Library.CountOfObjects;
+                Library.CountOfObjects -= 1;
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
             }
             catch (Exception ex)
@@ -71,6 +79,7 @@ namespace laba_1
             }
             
         }
+
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
         {
             try
@@ -193,7 +202,7 @@ namespace laba_1
                 if (result == DialogResult.OK)
                 {
                     formObjectsList.Items.Clear();
-                    formObjectsList.Items.AddRange(LibraryList.objects.ToArray());
+                    formObjectsList.Items.AddRange(libraries.ToArray());
                     Library a = (Library)formObjectsList.SelectedItem;
                 }
             }
@@ -214,7 +223,5 @@ namespace laba_1
                 MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
         }
-
-        
     }
 }

@@ -35,12 +35,12 @@
             // 
             this.LabelTitle.AutoSize = true;
             this.LabelTitle.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelTitle.Location = new System.Drawing.Point(35, 269);
+            this.LabelTitle.Location = new System.Drawing.Point(150, 259);
             this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(640, 120);
+            this.LabelTitle.Size = new System.Drawing.Size(542, 120);
             this.LabelTitle.TabIndex = 2;
-            this.LabelTitle.Text = "Лабораторная работа №1\r\nКласс. Статические члены класса. Обработка исключений\r\nГр" +
-    "уппа: 23ВП1\r\nСостав бригады: Аюпов М.Р. Ипатов В.М.";
+            this.LabelTitle.Text = "Лабораторная работа №2\r\nИспользование коллекций. Делегаты и события\r\nГруппа: 23ВП" +
+    "1\r\nСостав бригады: Аюпов М.Р. Ипатов В.М.";
             this.LabelTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.LabelTitle.Click += new System.EventHandler(this.LabelTitle_Click);
             // 
@@ -48,7 +48,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 661);
+            this.ClientSize = new System.Drawing.Size(857, 652);
             this.Controls.Add(this.LabelTitle);
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

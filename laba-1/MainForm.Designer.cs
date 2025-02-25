@@ -2,7 +2,7 @@
 
 namespace laba_1
 {
-    partial class LIBRARY
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace laba_1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LIBRARY));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.buttonCreateObjectOneParametr = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.formObjectsList = new System.Windows.Forms.ListBox();
