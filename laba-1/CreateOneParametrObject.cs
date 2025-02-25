@@ -58,7 +58,7 @@ namespace laba_1
             string Tel = textBox_tel.Text;
             int Books = (int)numericUpDown_books.Value;
             int Place = (int)numericUpDown_place.Value;
-            LibraryList.objects.Add(new Library(Name, Adress, Tel, Rating, Books, Place));
+            MainForm.libraries.Add(new Library(Name, Adress, Tel, Rating, Books, Place));
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
