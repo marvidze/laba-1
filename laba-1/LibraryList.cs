@@ -11,7 +11,7 @@ namespace laba_1
     {
         private List<Library> libraries = new List<Library>();
 
-        public delegate void LibraryEventHandler(Library library);
+        public delegate void LibraryEventHandler();
         public event LibraryEventHandler OnAddingLibrary;
         public event LibraryEventHandler OnDeletingLibrary;
 
@@ -32,11 +32,17 @@ namespace laba_1
         /// <param name="library">Библиотека, которую добавляем</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
-        public void Add(Library library)
+        public bool Add(Library library)
         {
             libraries.Add(library);
+            if (libraries.Contains(library))
+            {
+                OnAddingLibrary.Invoke();
+                return true;
+            }
+            return false;
 
-            OnAddingLibrary.Invoke(library);
+            
         }
 
         /// <summary>
@@ -45,10 +51,24 @@ namespace laba_1
         /// <param name="library">Библиотека, которую удаляем.</param>
         /// <returns>True - элемент удалён. False - элемент не удалён.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public void Remove(Library library)
+        public bool Remove(Library library)
         {
+            if (libraries.Contains(library))
+            {
+                return false;
+            }
             libraries.Remove(library);
-            OnDeletingLibrary.Invoke(library);
+            OnDeletingLibrary.Invoke();
+            return true;
+        }
+
+        public (int, int) IWantToComparison()
+        {
+            int StartTime = Environment.TickCount;
+            {
+
+            }
+                return (1, 2);
         }
 
         public IEnumerator<Library> GetEnumerator()
@@ -60,5 +80,7 @@ namespace laba_1
         {
             return libraries.GetEnumerator();
         }
+
+
     }
 }

@@ -28,13 +28,13 @@ namespace laba_1
         {
             InitializeComponent();
 
-            libraries.OnAddingLibrary += library => {
+            libraries.OnAddingLibrary += () => {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
             };
 
-            libraries.OnDeletingLibrary += library => {
+            libraries.OnDeletingLibrary += () => {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
