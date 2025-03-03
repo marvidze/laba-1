@@ -49,6 +49,8 @@ namespace laba_1
             this.label3 = new System.Windows.Forms.Label();
             this.formCountOfObjects = new System.Windows.Forms.Label();
             this.buttonDontClick = new System.Windows.Forms.Button();
+            this.button_compare = new System.Windows.Forms.Button();
+            this.richTextBox_CompareTime = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -110,7 +112,7 @@ namespace laba_1
             this.formListInfoObject.ItemHeight = 21;
             this.formListInfoObject.Location = new System.Drawing.Point(224, 33);
             this.formListInfoObject.Name = "formListInfoObject";
-            this.formListInfoObject.Size = new System.Drawing.Size(325, 613);
+            this.formListInfoObject.Size = new System.Drawing.Size(325, 256);
             this.formListInfoObject.TabIndex = 3;
             // 
             // label1
@@ -275,12 +277,36 @@ namespace laba_1
             this.buttonDontClick.UseVisualStyleBackColor = false;
             this.buttonDontClick.Click += new System.EventHandler(this.button_DontClick_Click);
             // 
-            // LIBRARY
+            // button_compare
+            // 
+            this.button_compare.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_compare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_compare.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_compare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_compare.Location = new System.Drawing.Point(224, 306);
+            this.button_compare.Name = "button_compare";
+            this.button_compare.Size = new System.Drawing.Size(325, 67);
+            this.button_compare.TabIndex = 10;
+            this.button_compare.Text = "Сравнить";
+            this.button_compare.UseVisualStyleBackColor = false;
+            this.button_compare.Click += new System.EventHandler(this.button_compare_Click);
+            // 
+            // richTextBox_CompareTime
+            // 
+            this.richTextBox_CompareTime.Location = new System.Drawing.Point(224, 390);
+            this.richTextBox_CompareTime.Name = "richTextBox_CompareTime";
+            this.richTextBox_CompareTime.Size = new System.Drawing.Size(325, 256);
+            this.richTextBox_CompareTime.TabIndex = 11;
+            this.richTextBox_CompareTime.Text = "";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(904, 661);
+            this.Controls.Add(this.richTextBox_CompareTime);
+            this.Controls.Add(this.button_compare);
             this.Controls.Add(this.formCountOfObjects);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -299,10 +325,9 @@ namespace laba_1
             this.Controls.Add(this.buttonDeleteObject);
             this.Controls.Add(this.buttonExit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "LIBRARY";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +353,7 @@ namespace laba_1
         private Label label3;
         private Label formCountOfObjects;
         private Button buttonDontClick;
+        private Button button_compare;
+        private RichTextBox richTextBox_CompareTime;
     }
 }

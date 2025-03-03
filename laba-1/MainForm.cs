@@ -28,13 +28,15 @@ namespace laba_1
         {
             InitializeComponent();
 
-            libraries.OnAddingLibrary += library => {
+            libraries.OnAddingLibrary += library =>
+            {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
             };
 
-            libraries.OnDeletingLibrary += library => {
+            libraries.OnDeletingLibrary += library =>
+            {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
@@ -53,7 +55,7 @@ namespace laba_1
             CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
             DialogResult result = OneParametrForm.ShowDialog();
         }
-        
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -62,7 +64,7 @@ namespace laba_1
         private void buttonDeleteObject_Click(object sender, EventArgs e)
         {
             Library a = (Library)formObjectsList.SelectedItem;
-            try             
+            try
             {
                 if (a == null)
                 {
@@ -77,7 +79,7 @@ namespace laba_1
             {
                 MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
-            
+
         }
 
         private void buttonShowAllParametrs_Click(object sender, EventArgs e)
@@ -222,6 +224,44 @@ namespace laba_1
             {
                 MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_compare_Click(object sender, EventArgs e)
+        {
+            int size = 10000;
+
+            LibrariesList librariesListCompare = new LibrariesList();
+            Array librariesArrayCompare = Array.CreateInstance(typeof(Library), size);
+
+            int startTimeList = Environment.TickCount;
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    librariesListCompare.Add(new Library());
+                }
+            }
+            int ResultTimeList = Environment.TickCount - startTimeList;
+            richTextBox_CompareTime.Text = "Время заполнения LibraryList: " + ResultTimeList;
+
+            int startTimeArray = Environment.TickCount;
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    librariesArrayCompare.SetValue(new Library(), i);
+                }
+            }
+            int ResultTimeArray = Environment.TickCount - startTimeArray;
+            richTextBox_CompareTime.Text = "Время заполнения Array: " + ResultTimeArray;
         }
     }
 }
