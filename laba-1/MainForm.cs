@@ -24,6 +24,7 @@ namespace laba_1
         // Список экземпляров класса Library
         public static LibrariesList libraries = new LibrariesList();
 
+
         public MainForm()
         {
             InitializeComponent();
@@ -41,13 +42,6 @@ namespace laba_1
                 formObjectsList.Items.AddRange(libraries.ToArray());
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
             };
-        }
-
-        private void UpdateObjectList(Library library)
-        {
-            formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(libraries.ToArray());
-            formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
 
         private void buttonCreateObjectAllParametr_Click(object sender, EventArgs e)
@@ -226,19 +220,22 @@ namespace laba_1
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_compare_Click(object sender, EventArgs e)
         {
-            int size = 10000;
+            libraries.OnAddingLibrary += library =>
+            {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(libraries.ToArray());
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+            };
+
+            libraries.OnDeletingLibrary += library =>
+            {
+                formObjectsList.Items.Clear();
+                formObjectsList.Items.AddRange(libraries.ToArray());
+                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+            };
+            int size = 1000000;
 
             LibrariesList librariesListCompare = new LibrariesList();
             Array librariesArrayCompare = Array.CreateInstance(typeof(Library), size);
@@ -251,7 +248,6 @@ namespace laba_1
                 }
             }
             int ResultTimeList = Environment.TickCount - startTimeList;
-            richTextBox_CompareTime.Text = "Время заполнения LibraryList: " + ResultTimeList;
 
             int startTimeArray = Environment.TickCount;
             {
@@ -261,7 +257,52 @@ namespace laba_1
                 }
             }
             int ResultTimeArray = Environment.TickCount - startTimeArray;
-            richTextBox_CompareTime.Text = "Время заполнения Array: " + ResultTimeArray;
+
+
+            // Последовательная выборка из LibrariesList
+            int startTimeListSequential = Environment.TickCount;
+            for (int i = 0; i < size; i++)
+            {
+                var item = librariesListCompare[i];
+            }
+            int ResultTimeListSequential = Environment.TickCount - startTimeListSequential;
+
+            // Последовательная выборка из Array
+            int startTimeArraySequential = Environment.TickCount;
+            for (int i = 0; i < size; i++)
+            {
+                var item = librariesArrayCompare.GetValue(i);
+            }
+            int ResultTimeArraySequential = Environment.TickCount - startTimeArraySequential;
+
+            // Случайная выборка из LibrariesList
+            Random random = new Random();
+            int startTimeListRandom = Environment.TickCount;
+            for (int i = 0; i < size; i++)
+            {
+                int randomIndex = random.Next(0, size);
+                var item = librariesListCompare[randomIndex];
+            }
+            int ResultTimeListRandom = Environment.TickCount - startTimeListRandom;
+
+            // Случайная выборка из Array
+            int startTimeArrayRandom = Environment.TickCount;
+            for (int i = 0; i < size; i++)
+            {
+                int randomIndex = random.Next(0, size);
+                var item = librariesArrayCompare.GetValue(randomIndex);
+            }
+            int ResultTimeArrayRandom = Environment.TickCount - startTimeArrayRandom;
+
+            // Вывод результатов
+            richTextBox_CompareTime.Text = "Было создано 100 000 объектов\n" +
+                                           "Время заполнения Array: " + ResultTimeArray + " мс\n" +
+                                           "Время заполнения LibrariesList: " + ResultTimeList + " мс\n\n" +
+                                           "Время последовательной выборки из Array: " + ResultTimeArraySequential + " мс\n" +
+                                           "Время последовательной выборки из LibrariesList: " + ResultTimeListSequential + " мс\n\n" +
+                                           "Время случайной выборки из Array: " + ResultTimeArrayRandom + " мс\n" +
+                                           "Время случайной выборки из LibrariesList: " + ResultTimeListRandom + " мс";
+            formCountOfObjects.Text = Library.CountOfObjects.ToString();
         }
     }
 }

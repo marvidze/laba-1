@@ -268,7 +268,7 @@ namespace laba_1
             this.buttonDontClick.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDontClick.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonDontClick.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDontClick.Location = new System.Drawing.Point(816, 498);
+            this.buttonDontClick.Location = new System.Drawing.Point(684, 325);
             this.buttonDontClick.Name = "buttonDontClick";
             this.buttonDontClick.Size = new System.Drawing.Size(79, 41);
             this.buttonDontClick.TabIndex = 0;
@@ -293,6 +293,7 @@ namespace laba_1
             // 
             // richTextBox_CompareTime
             // 
+            this.richTextBox_CompareTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_CompareTime.Location = new System.Drawing.Point(224, 390);
             this.richTextBox_CompareTime.Name = "richTextBox_CompareTime";
             this.richTextBox_CompareTime.Size = new System.Drawing.Size(325, 256);
@@ -327,7 +328,7 @@ namespace laba_1
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Laba_2";
             this.ResumeLayout(false);
             this.PerformLayout();
 

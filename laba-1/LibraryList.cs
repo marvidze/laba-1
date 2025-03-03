@@ -35,8 +35,7 @@ namespace laba_1
         public void Add(Library library)
         {
             libraries.Add(library);
-
-            OnAddingLibrary.Invoke(library);
+            OnAddingLibrary?.Invoke(library);
         }
 
         /// <summary>
@@ -48,7 +47,7 @@ namespace laba_1
         public void Remove(Library library)
         {
             libraries.Remove(library);
-            OnDeletingLibrary.Invoke(library);
+            OnDeletingLibrary?.Invoke(library);
         }
 
         public IEnumerator<Library> GetEnumerator()
