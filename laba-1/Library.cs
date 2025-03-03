@@ -52,6 +52,7 @@ namespace laba_1
             Name = name;
         }
 
+        public void df() { }
         public Library(String name, String addres)
         {
             Name = name;
