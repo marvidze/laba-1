@@ -41,13 +41,6 @@ namespace laba_1
             };
         }
 
-        private void UpdateObjectList(Library library)
-        {
-            formObjectsList.Items.Clear();
-            formObjectsList.Items.AddRange(libraries.ToArray());
-            formCountOfObjects.Text = Library.CountOfObjects.ToString();
-        }
-
         private void buttonCreateObjectAllParametr_Click(object sender, EventArgs e)
         {
             CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
