@@ -116,11 +116,11 @@ namespace laba_1
             {
                 MessageBox(0, $"{ex.Message}", "Ошибка", 0);
             }
-            catch 
+            catch
             {
                 MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
             }
-            
+
         }
 
         private void buttonShowNumberOfPhone_Click(object sender, EventArgs e)
