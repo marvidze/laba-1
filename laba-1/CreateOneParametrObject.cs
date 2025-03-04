@@ -14,7 +14,7 @@ namespace laba_1
     public partial class CreateOneParametrObject : Form
     {
         private Library _item;
-        private string defaultName = "Библиотека";
+        private string defaultName = "Библиотека №" + (Library.CountOfObjects+1);
         private string defaultAdress = "0";
         private float defaultRating = 0;
         private string defaultTel = "0";
