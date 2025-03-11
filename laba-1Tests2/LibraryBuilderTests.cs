@@ -14,7 +14,7 @@ namespace laba_1.Tests
         [TestMethod()]
         public void SetNameTest()
         {
-            Library obj = new LibraryBuilder().SetName("Библиотека");
+            Library obj = new LibraryBuilder().SetName("Библиотека").Build();
             Assert.Fail();
         }
     }
