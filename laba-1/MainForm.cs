@@ -19,7 +19,7 @@ namespace laba_1
         public static extern void SetWindowText(int hWnd, String text);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern IntPtr MessageBox(int hWnd, string text, string caption, uint type);
+        public static extern IntPtr MessageBox(IntPtr hWnd, string text, string caption, uint type);
 
         // Список экземпляров класса Library
         public static LibrariesList libraries = new LibrariesList();
@@ -71,7 +71,8 @@ namespace laba_1
             }
             catch (Exception ex)
             {
-                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
             }
 
         }
@@ -92,11 +93,13 @@ namespace laba_1
             }
             catch (LibraryException ex)
             {
-                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
             }
             catch
             {
-                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -110,11 +113,13 @@ namespace laba_1
             }
             catch (LibraryException ex)
             {
-                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
             }
             catch
             {
-                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
             }
 
         }
@@ -129,11 +134,13 @@ namespace laba_1
             }
             catch (LibraryException ex)
             {
-                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
             }
             catch
             {
-                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -155,7 +162,8 @@ namespace laba_1
                 }
                 catch
                 {
-                    MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                    IntPtr window = this.Handle;
+                    MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
                 }
             }
         }
@@ -170,7 +178,8 @@ namespace laba_1
             }
             catch
             {
-                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -184,7 +193,8 @@ namespace laba_1
             }
             catch
             {
-                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -204,7 +214,8 @@ namespace laba_1
             }
             catch
             {
-                MessageBox(0, "Вы не выбрали объект!", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
             }
         }
 
@@ -216,7 +227,8 @@ namespace laba_1
             }
             catch (StackOverflowException ex)
             {
-                MessageBox(0, $"{ex.Message}", "Ошибка", 0);
+                IntPtr window = this.Handle;
+                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
             }
         }
 
