@@ -68,6 +68,7 @@ namespace laba_1
                 a = null;
                 Library.CountOfObjects -= 1;
                 formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                formListInfoObject.Items.Clear();  
             }
             catch (Exception ex)
             {
