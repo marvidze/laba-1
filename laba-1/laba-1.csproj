@@ -52,6 +52,7 @@
     <Compile Include="CreateOneParametrObject.Designer.cs">
       <DependentUpon>CreateOneParametrObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="ILibraryBuilder.cs" />
     <Compile Include="LibraryBuilder.cs" />
     <Compile Include="LibraryException.cs" />
     <Compile Include="LibraryList.cs" />

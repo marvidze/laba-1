@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laba_1
 {
-    internal class LibraryBuilder
+    public class LibraryBuilder : ILibraryBuilder
     {
         private Library _library = new Library();
 
