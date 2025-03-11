@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laba_1
 {
-    public class LibraryBuilder : ILibraryBuilder
+    public class TechnicalLibraryBuilder : ILibraryBuilder
     {
         private Library _library = new Library();
 
@@ -15,61 +15,77 @@ namespace laba_1
         /// </summary>
         /// <param name="name">имя</param>
         /// <returns></returns>
-        public LibraryBuilder SetName(string name)
+        public ILibraryBuilder SetName(string name)
         {
             _library.Name = name;
             return this;
         }
+
         /// <summary>
         /// Задаёт адрес библиотеки
         /// </summary>
         /// <param name="address">адрес</param>
         /// <returns></returns>
-        public LibraryBuilder SetAddress(string address)
+        public ILibraryBuilder SetAddress(string address)
         {
             _library.Addres = address;
             return this;
         }
+
         /// <summary>
         /// Задаёт номер телефона библиотеки
         /// </summary>
         /// <param name="address">номер телефона</param>
         /// <returns></returns>
-        public LibraryBuilder SetNumberOfPhone(string numberOfPhone)
+        public ILibraryBuilder SetNumberOfPhone(string numberOfPhone)
         {
             _library.NumberOfPhone = numberOfPhone;
             return this;
         }
+
         /// <summary>
         /// Задаёт рейтинг библиотеки
         /// </summary>
         /// <param name="address">рейтинг</param>
         /// <returns></returns>
-        public LibraryBuilder SetRating(float rating)
+        public ILibraryBuilder SetRating(float rating)
         {
             _library.Rating = rating;
             return this;
         }
+
         /// <summary>
         /// Задаёт количество книг библиотеки
         /// </summary>
         /// <param name="address">количество книг</param>
         /// <returns></returns>
-        public LibraryBuilder SetCountOfBooks(int countOfBooks)
+        public ILibraryBuilder SetCountOfBooks(int countOfBooks)
         {
             _library.CountOfBooks = countOfBooks;
             return this;
         }
+
         /// <summary>
         /// Задаёт количество мест в читальном зале библиотеки
         /// </summary>
         /// <param name="address">количество мест в читальном зале</param>
         /// <returns></returns>
-        public LibraryBuilder SetCountOfSeats(int countOfSeats)
+        public ILibraryBuilder SetCountOfSeats(int countOfSeats)
         {
             _library.CountOfSeats = countOfSeats;
             return this;
         }
+
+        /// <summary>
+        /// Задаёт тип библиотеки
+        /// </summary>
+        /// <returns></returns>
+        public ILibraryBuilder SetTypeOfLibrary()
+        {
+            _library.TypeOfLibrary = "Техническая";
+            return this;
+        }
+
         /// <summary>
         /// Создаёт объект Library 
         /// </summary>

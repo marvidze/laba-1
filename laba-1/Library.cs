@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace laba_1
@@ -29,7 +30,10 @@ namespace laba_1
         public int CountOfBooks { get; set; } = 0;
         public int CountOfSeats { get; set; } = 0;
         public int Id { get; set; } = 0;
+        public string TypeOfLibrary { get; set; }
         public static int CountOfObjects { get; set; } = 0;
+
+        
 
         /// <summary>
         /// Конструктор по умолчанию класса Library

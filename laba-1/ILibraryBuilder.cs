@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace laba_1
 {
-    interface ILibraryBuilder
+    public interface ILibraryBuilder
     {
-        LibraryBuilder SetName(string name);
-        LibraryBuilder SetAddress(string address);
-        LibraryBuilder SetNumberOfPhone(string numberOfPhone);
-        LibraryBuilder SetRating(float rating);
-        LibraryBuilder SetCountOfBooks(int countOfBooks);
-        LibraryBuilder SetCountOfSeats(int countOfSeats);
+        ILibraryBuilder SetName(string name);
+        ILibraryBuilder SetAddress(string address);
+        ILibraryBuilder SetNumberOfPhone(string numberOfPhone);
+        ILibraryBuilder SetRating(float rating);
+        ILibraryBuilder SetCountOfBooks(int countOfBooks);
+        ILibraryBuilder SetCountOfSeats(int countOfSeats);
+        ILibraryBuilder SetTypeOfLibrary();
+        Library Build();
     }
 }
