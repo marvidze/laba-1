@@ -16,9 +16,9 @@ namespace laba_1
             _builder = builder;
         }
 
-        public void ConstructLibrary(string Name, string Adress, string Tel, float Rating, int Books, int Place)
+        public Library ConstructLibrary(string Name, string Adress, string Tel, float Rating, int Books, int Place)
         {
-            _builder.SetName(Name)
+            return _builder.SetName(Name)
                 .SetAddress(Adress)
                 .SetNumberOfPhone(Tel)
                 .SetRating(Rating)

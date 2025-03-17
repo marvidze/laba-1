@@ -14,7 +14,6 @@ namespace laba_1
         ILibraryBuilder SetRating(float rating);
         ILibraryBuilder SetCountOfBooks(int countOfBooks);
         ILibraryBuilder SetCountOfSeats(int countOfSeats);
-        ILibraryBuilder SetTypeOfLibrary();
         Library Build();
     }
 }

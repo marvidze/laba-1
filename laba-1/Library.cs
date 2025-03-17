@@ -30,10 +30,8 @@ namespace laba_1
         public int CountOfBooks { get; set; } = 0;
         public int CountOfSeats { get; set; } = 0;
         public int Id { get; set; } = 0;
-        public string TypeOfLibrary { get; set; }
         public static int CountOfObjects { get; set; } = 0;
-
-        
+        public string TypeOfLibrary { get; set; }
 
         /// <summary>
         /// Конструктор по умолчанию класса Library

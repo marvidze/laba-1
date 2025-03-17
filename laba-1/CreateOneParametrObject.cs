@@ -20,6 +20,7 @@ namespace laba_1
         private string defaultTel = "0";
         private int defaultBooks = 0;
         private int defaultPlace = 0;
+        private LibraryDirector director  = new LibraryDirector();
 
         public CreateOneParametrObject()
         {
@@ -48,6 +49,9 @@ namespace laba_1
             textBox_tel.Text = defaultTel;
             numericUpDown_books.Value = defaultBooks;
             numericUpDown_place.Value = defaultPlace;
+            comboBox_type_library.Items.Add("Техническая");
+            comboBox_type_library.Items.Add("Художественная");
+            comboBox_type_library.SelectedItem = comboBox_type_library.Items[0];
         }
 
         private void button_createObject_Click(object sender, EventArgs e)
@@ -58,8 +62,25 @@ namespace laba_1
             string Tel = textBox_tel.Text;
             int Books = (int)numericUpDown_books.Value;
             int Place = (int)numericUpDown_place.Value;
-            LibraryDirector director = new LibraryDirector();
-            
+            string typeOfLibrary = comboBox_type_library.SelectedItem.ToString();
+            ILibraryBuilder builder;
+
+            switch (typeOfLibrary)
+            {
+                case "Техническая":
+                    builder = new TechnicalLibraryBuilder();
+                    break;
+                case "Художественная":
+                    builder = new ArtLibraryBuilder();
+                    break;
+                default:
+                    builder = new TechnicalLibraryBuilder();
+                    break;
+            }
+
+            director.SetBuilder(builder);
+            Library library = director.ConstructLibrary(Name, Adress, Tel, Rating, Books, Place);
+            MainForm.libraries.Add(library);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -72,6 +93,7 @@ namespace laba_1
             _item.NumberOfPhone = textBox_tel.Text;
             _item.CountOfBooks = (int)numericUpDown_books.Value;
             _item.CountOfSeats = (int)numericUpDown_place.Value;
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

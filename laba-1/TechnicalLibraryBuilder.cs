@@ -77,21 +77,12 @@ namespace laba_1
         }
 
         /// <summary>
-        /// Задаёт тип библиотеки
-        /// </summary>
-        /// <returns></returns>
-        public ILibraryBuilder SetTypeOfLibrary()
-        {
-            _library.TypeOfLibrary = "Техническая";
-            return this;
-        }
-
-        /// <summary>
         /// Создаёт объект Library 
         /// </summary>
         /// <returns></returns>
         public Library Build()
         {
+            _library.TypeOfLibrary = "Техническая";
             return _library;
         }
     }

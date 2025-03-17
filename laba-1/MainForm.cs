@@ -83,12 +83,15 @@ namespace laba_1
             try
             {
                 Library a = (Library)formObjectsList.SelectedItem;
-                string[] arr = { "Название: "+a.Name,
+                string[] arr = {
+                "Тип библиотеки: "+a.TypeOfLibrary,
+                "Название: "+a.Name,
                 "Адрес: " + a.Addres,
                 "Рейтинг: "+ a.Rating.ToString(),
                 "Номер телефона: "+ a.NumberOfPhone.ToString(),
                 "Количество книг: " + a.CountOfBooks.ToString(),
-                "Количество мест в читальном зале: " + a.CountOfSeats.ToString()};
+                "Количество мест в читальном зале: " + a.CountOfSeats.ToString()
+                };
                 formListInfoObject.Items.Clear();
                 formListInfoObject.Items.AddRange(arr);
             }

@@ -57,7 +57,7 @@ namespace laba_1
         /// <summary>
         /// Задаёт количество книг библиотеки
         /// </summary>
-        /// <param name="address">количество книг</param>
+        /// <param name="address">Количество книг</param>
         /// <returns></returns>
         public ILibraryBuilder SetCountOfBooks(int countOfBooks)
         {
@@ -77,21 +77,12 @@ namespace laba_1
         }
 
         /// <summary>
-        /// Задаёт тип библиотеки
-        /// </summary>
-        /// <returns></returns>
-        public ILibraryBuilder SetTypeOfLibrary()
-        {
-            _library.TypeOfLibrary = "Художественная";
-            return this;
-        }
-
-        /// <summary>
         /// Создаёт объект Library 
         /// </summary>
         /// <returns></returns>
         public Library Build()
         {
+            _library.TypeOfLibrary = "Художественная";
             return _library;
         }
     }
