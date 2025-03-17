@@ -52,6 +52,9 @@
     <Compile Include="CreateOneParametrObject.Designer.cs">
       <DependentUpon>CreateOneParametrObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="ILibraryBuilder.cs" />
+    <Compile Include="ArtLibraryBuilder.cs" />
+    <Compile Include="LibraryDirector.cs" />
     <Compile Include="LibraryException.cs" />
     <Compile Include="LibraryList.cs" />
     <Compile Include="MainForm.cs">
@@ -60,6 +63,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TechnicalLibraryBuilder.cs" />
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
