@@ -11,7 +11,7 @@ namespace laba_1
     {
         private List<Library> libraries = new List<Library>();
 
-        public delegate void LibraryEventHandler(Library library);
+        public delegate void LibraryEventHandler();
         public event LibraryEventHandler OnAddingLibrary;
         public event LibraryEventHandler OnDeletingLibrary;
 
@@ -35,7 +35,7 @@ namespace laba_1
         public void Add(Library library)
         {
             libraries.Add(library);
-            OnAddingLibrary?.Invoke(library);
+            OnAddingLibrary?.Invoke();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace laba_1
         public void Remove(Library library)
         {
             libraries.Remove(library);
-            OnDeletingLibrary?.Invoke(library);
+            OnDeletingLibrary?.Invoke();
         }
 
         public IEnumerator<Library> GetEnumerator()
