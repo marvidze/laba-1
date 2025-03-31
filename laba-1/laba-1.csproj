@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtLibrary.cs" />
     <Compile Include="CreateOneParametrObject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateOneParametrObject.Designer.cs">
       <DependentUpon>CreateOneParametrObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="ILibraryBuilder.cs" />
-    <Compile Include="ArtLibraryBuilder.cs" />
-    <Compile Include="LibraryDirector.cs" />
+    <Compile Include="FilialLibrary.cs" />
+    <Compile Include="ItypeLibrary.cs" />
     <Compile Include="LibraryException.cs" />
     <Compile Include="LibraryList.cs" />
     <Compile Include="MainForm.cs">
@@ -63,7 +63,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TechnicalLibraryBuilder.cs" />
+    <Compile Include="MainLibrary.cs" />
+    <Compile Include="TechnicalLibrary.cs" />
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>

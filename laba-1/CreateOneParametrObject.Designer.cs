@@ -45,6 +45,8 @@
             this.button_change = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox_type_library = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox_level_library = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_rating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_books)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_place)).BeginInit();
@@ -52,7 +54,7 @@
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(180, 45);
+            this.textBox_name.Location = new System.Drawing.Point(180, 71);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(142, 20);
             this.textBox_name.TabIndex = 0;
@@ -61,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 49);
+            this.label1.Location = new System.Drawing.Point(9, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 1;
@@ -69,7 +71,7 @@
             // 
             // button_createObject
             // 
-            this.button_createObject.Location = new System.Drawing.Point(12, 260);
+            this.button_createObject.Location = new System.Drawing.Point(12, 286);
             this.button_createObject.Name = "button_createObject";
             this.button_createObject.Size = new System.Drawing.Size(75, 23);
             this.button_createObject.TabIndex = 2;
@@ -80,7 +82,7 @@
             // button_closeForm
             // 
             this.button_closeForm.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button_closeForm.Location = new System.Drawing.Point(255, 260);
+            this.button_closeForm.Location = new System.Drawing.Point(255, 286);
             this.button_closeForm.Name = "button_closeForm";
             this.button_closeForm.Size = new System.Drawing.Size(75, 23);
             this.button_closeForm.TabIndex = 3;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 79);
+            this.label2.Location = new System.Drawing.Point(9, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
@@ -99,7 +101,7 @@
             // 
             // textBox_adress
             // 
-            this.textBox_adress.Location = new System.Drawing.Point(180, 75);
+            this.textBox_adress.Location = new System.Drawing.Point(180, 101);
             this.textBox_adress.Name = "textBox_adress";
             this.textBox_adress.Size = new System.Drawing.Size(142, 20);
             this.textBox_adress.TabIndex = 5;
@@ -108,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 109);
+            this.label3.Location = new System.Drawing.Point(9, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 7;
@@ -117,7 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 139);
+            this.label4.Location = new System.Drawing.Point(9, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 13);
             this.label4.TabIndex = 8;
@@ -125,7 +127,7 @@
             // 
             // textBox_tel
             // 
-            this.textBox_tel.Location = new System.Drawing.Point(180, 135);
+            this.textBox_tel.Location = new System.Drawing.Point(180, 161);
             this.textBox_tel.Name = "textBox_tel";
             this.textBox_tel.Size = new System.Drawing.Size(142, 20);
             this.textBox_tel.TabIndex = 9;
@@ -134,7 +136,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 169);
+            this.label5.Location = new System.Drawing.Point(9, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 10;
@@ -143,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 199);
+            this.label6.Location = new System.Drawing.Point(9, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 12;
@@ -151,14 +153,14 @@
             // 
             // numericUpDown_rating
             // 
-            this.numericUpDown_rating.Location = new System.Drawing.Point(180, 105);
+            this.numericUpDown_rating.Location = new System.Drawing.Point(180, 131);
             this.numericUpDown_rating.Name = "numericUpDown_rating";
             this.numericUpDown_rating.Size = new System.Drawing.Size(142, 20);
             this.numericUpDown_rating.TabIndex = 14;
             // 
             // numericUpDown_books
             // 
-            this.numericUpDown_books.Location = new System.Drawing.Point(180, 165);
+            this.numericUpDown_books.Location = new System.Drawing.Point(180, 191);
             this.numericUpDown_books.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -170,7 +172,7 @@
             // 
             // numericUpDown_place
             // 
-            this.numericUpDown_place.Location = new System.Drawing.Point(180, 197);
+            this.numericUpDown_place.Location = new System.Drawing.Point(180, 223);
             this.numericUpDown_place.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -182,7 +184,7 @@
             // 
             // button_change
             // 
-            this.button_change.Location = new System.Drawing.Point(12, 231);
+            this.button_change.Location = new System.Drawing.Point(12, 286);
             this.button_change.Name = "button_change";
             this.button_change.Size = new System.Drawing.Size(75, 23);
             this.button_change.TabIndex = 1;
@@ -207,11 +209,30 @@
             this.comboBox_type_library.Size = new System.Drawing.Size(142, 21);
             this.comboBox_type_library.TabIndex = 18;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Статус библиотеки:";
+            // 
+            // comboBox_level_library
+            // 
+            this.comboBox_level_library.FormattingEnabled = true;
+            this.comboBox_level_library.Location = new System.Drawing.Point(180, 45);
+            this.comboBox_level_library.Name = "comboBox_level_library";
+            this.comboBox_level_library.Size = new System.Drawing.Size(142, 21);
+            this.comboBox_level_library.TabIndex = 20;
+            // 
             // CreateOneParametrObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 295);
+            this.ClientSize = new System.Drawing.Size(342, 320);
+            this.Controls.Add(this.comboBox_level_library);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox_type_library);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button_change);
@@ -259,5 +280,7 @@
         private System.Windows.Forms.Button button_change;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox_type_library;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox_level_library;
     }
 }

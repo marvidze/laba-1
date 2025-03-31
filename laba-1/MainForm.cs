@@ -33,14 +33,14 @@ namespace laba_1
             {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
-                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                formCountOfObjects.Text = Library.CountObjects.ToString();
             };
 
             libraries.OnDeletingLibrary += library =>
             {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
-                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                formCountOfObjects.Text = Library.CountObjects.ToString();
             };
         }
 
@@ -66,8 +66,8 @@ namespace laba_1
                 }
                 libraries.Remove(a);
                 a = null;
-                Library.CountOfObjects -= 1;
-                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                Library.CountObjects -= 1;
+                formCountOfObjects.Text = Library.CountObjects.ToString();
                 formListInfoObject.Items.Clear();  
             }
             catch (Exception ex)
@@ -84,13 +84,14 @@ namespace laba_1
             {
                 Library a = (Library)formObjectsList.SelectedItem;
                 string[] arr = {
-                "Тип библиотеки: "+a.TypeOfLibrary,
+                "Статус библиотеки: "+a.LevelLibrary,
+                "Тип библиотеки: "+a.TypeLibrary.GetTypeLibrary(),
                 "Название: "+a.Name,
                 "Адрес: " + a.Addres,
                 "Рейтинг: "+ a.Rating.ToString(),
-                "Номер телефона: "+ a.NumberOfPhone.ToString(),
-                "Количество книг: " + a.CountOfBooks.ToString(),
-                "Количество мест в читальном зале: " + a.CountOfSeats.ToString()
+                "Номер телефона: "+ a.NumberPhone.ToString(),
+                "Количество книг: " + a.CountBooks.ToString(),
+                "Количество мест в читальном зале: " + a.CountSeats.ToString()
                 };
                 formListInfoObject.Items.Clear();
                 formListInfoObject.Items.AddRange(arr);
@@ -134,7 +135,7 @@ namespace laba_1
             {
                 Library a = (Library)formObjectsList.SelectedItem;
                 formListInfoObject.Items.Clear();
-                formListInfoObject.Items.Add("Номер телефона: " + a.NumberOfPhone);
+                formListInfoObject.Items.Add("Номер телефона: " + a.NumberPhone);
             }
             catch (LibraryException ex)
             {
@@ -154,7 +155,7 @@ namespace laba_1
             {
                 Library a = (Library)formObjectsList.SelectedItem;
                 formListInfoObject.Items.Clear();
-                formListInfoObject.Items.Add("Количество мест в читальном зале: " + a.CountOfSeats);
+                formListInfoObject.Items.Add("Количество мест в читальном зале: " + a.CountSeats);
             }
             catch
             {
@@ -162,7 +163,7 @@ namespace laba_1
                 {
                     Library a = (Library)formObjectsList.SelectedItem;
                     formListInfoObject.Items.Clear();
-                    formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+                    formListInfoObject.Items.Add("Количество книг: " + a.CountBooks);
                 }
                 catch
                 {
@@ -193,7 +194,7 @@ namespace laba_1
             {
                 Library a = (Library)formObjectsList.SelectedItem;
                 formListInfoObject.Items.Clear();
-                formListInfoObject.Items.Add("Количество книг: " + a.CountOfBooks);
+                formListInfoObject.Items.Add("Количество книг: " + a.CountBooks);
             }
             catch
             {
@@ -242,14 +243,14 @@ namespace laba_1
             {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
-                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                formCountOfObjects.Text = Library.CountObjects.ToString();
             };
 
             libraries.OnDeletingLibrary += library =>
             {
                 formObjectsList.Items.Clear();
                 formObjectsList.Items.AddRange(libraries.ToArray());
-                formCountOfObjects.Text = Library.CountOfObjects.ToString();
+                formCountOfObjects.Text = Library.CountObjects.ToString();
             };
             int size = 1000000;
 
@@ -260,7 +261,7 @@ namespace laba_1
             {
                 for (int i = 0; i < size; i++)
                 {
-                    librariesListCompare.Add(new Library());
+                    librariesListCompare.Add(new FilialLibrary());
                 }
             }
             int ResultTimeList = Environment.TickCount - startTimeList;
@@ -269,7 +270,7 @@ namespace laba_1
             {
                 for (int i = 0; i < size; i++)
                 {
-                    librariesArrayCompare.SetValue(new Library(), i);
+                    librariesArrayCompare.SetValue(new FilialLibrary(), i);
                 }
             }
             int ResultTimeArray = Environment.TickCount - startTimeArray;
@@ -318,7 +319,7 @@ namespace laba_1
                                            "Время последовательной выборки из LibrariesList: " + ResultTimeListSequential + " мс\n\n" +
                                            "Время случайной выборки из Array: " + ResultTimeArrayRandom + " мс\n" +
                                            "Время случайной выборки из LibrariesList: " + ResultTimeListRandom + " мс";
-            formCountOfObjects.Text = Library.CountOfObjects.ToString();
+            formCountOfObjects.Text = Library.CountObjects.ToString();
         }
     }
 }

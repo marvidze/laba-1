@@ -14,13 +14,12 @@ namespace laba_1
     public partial class CreateOneParametrObject : Form
     {
         private Library _item;
-        private string defaultName = "Библиотека №" + (Library.CountOfObjects+1);
+        private string defaultName = "Библиотека №" + (Library.CountObjects + 1);
         private string defaultAdress = "0";
         private float defaultRating = 0;
         private string defaultTel = "0";
         private int defaultBooks = 0;
         private int defaultPlace = 0;
-        private LibraryDirector director  = new LibraryDirector();
 
         public CreateOneParametrObject()
         {
@@ -35,10 +34,11 @@ namespace laba_1
             defaultName = item.Name;
             defaultAdress = item.Addres;
             defaultRating = item.Rating;
-            defaultTel = item.NumberOfPhone;
-            defaultBooks = item.CountOfBooks;
-            defaultPlace = item.CountOfSeats;
+            defaultTel = item.NumberPhone;
+            defaultBooks = item.CountBooks;
+            defaultPlace = item.CountSeats;
             button_createObject.Hide();
+            /////////////////////////////////////////////////// comboBox не отображается
         }
 
         private void CreateOneParametrObject_Load(object sender, EventArgs e)
@@ -52,6 +52,9 @@ namespace laba_1
             comboBox_type_library.Items.Add("Техническая");
             comboBox_type_library.Items.Add("Художественная");
             comboBox_type_library.SelectedItem = comboBox_type_library.Items[0];
+            comboBox_level_library.Items.Add("Главное здание");
+            comboBox_level_library.Items.Add("Филиал");
+            comboBox_level_library.SelectedItem = comboBox_level_library.Items[0];
         }
 
         private void button_createObject_Click(object sender, EventArgs e)
@@ -63,23 +66,40 @@ namespace laba_1
             int Books = (int)numericUpDown_books.Value;
             int Place = (int)numericUpDown_place.Value;
             string typeOfLibrary = comboBox_type_library.SelectedItem.ToString();
-            ILibraryBuilder builder;
+            string levelLibrary = comboBox_level_library.SelectedItem.ToString();
 
-            switch (typeOfLibrary)
+            ItypeLibrary artLibrary = new ArtLibrary();
+            ItypeLibrary techLibrary = new TechnicalLibrary();
+            Library library = null;
+            if (levelLibrary == "Главное здание")
             {
-                case "Техническая":
-                    builder = new TechnicalLibraryBuilder();
-                    break;
-                case "Художественная":
-                    builder = new ArtLibraryBuilder();
-                    break;
-                default:
-                    builder = new TechnicalLibraryBuilder();
-                    break;
+                switch (typeOfLibrary)
+                {
+                    case "Техническая":
+                        library = new MainLibrary(Adress, Tel, Rating, Books, Place, techLibrary, levelLibrary, Name);
+                        break;
+                    case "Художественная":
+                        library = new MainLibrary(Adress, Tel, Rating, Books, Place, artLibrary, levelLibrary, Name);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                switch (typeOfLibrary)
+                {
+                    case "Техническая":
+                        library = new FilialLibrary(Adress, Tel, Rating, Books, Place, techLibrary, levelLibrary, Name);
+                        break;
+                    case "Художественная":
+                        library = new FilialLibrary(Adress, Tel, Rating, Books, Place, artLibrary, levelLibrary, Name);
+                        break;
+                    default:
+                        break;
+                }
             }
 
-            director.SetBuilder(builder);
-            Library library = director.ConstructLibrary(Name, Adress, Tel, Rating, Books, Place);
             MainForm.libraries.Add(library);
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -90,9 +110,10 @@ namespace laba_1
             _item.Name = textBox_name.Text;
             _item.Addres = textBox_adress.Text;
             _item.Rating = (float)numericUpDown_rating.Value;
-            _item.NumberOfPhone = textBox_tel.Text;
-            _item.CountOfBooks = (int)numericUpDown_books.Value;
-            _item.CountOfSeats = (int)numericUpDown_place.Value;
+            _item.NumberPhone = textBox_tel.Text;
+            _item.CountBooks = (int)numericUpDown_books.Value;
+            _item.CountSeats = (int)numericUpDown_place.Value;
+            ////////////////////////////////////////////////////////////////////////////////////////// comboBox
 
             this.DialogResult = DialogResult.OK;
             this.Close();

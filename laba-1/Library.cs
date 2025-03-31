@@ -21,26 +21,51 @@ namespace laba_1
     /// Id - id библиотеки
     /// CountOfObjects - количество существующих беблиотек
     /// </summary>
-    public class Library
+    public abstract class Library
     {
         public string Name { get; set; }
-        public string Addres { get; set; } = "Отсутствует значение";
-        public string NumberOfPhone { get; set; } = "Отсутствует значение";
+        public string Addres { get; set; } = "отсутствует значение";
+        public string NumberPhone { get; set; } = "отсутствует значение";
         public float Rating { get; set; } = 0;
-        public int CountOfBooks { get; set; } = 0;
-        public int CountOfSeats { get; set; } = 0;
+        public int CountBooks { get; set; } = 0;
+        public int CountSeats { get; set; } = 0;
         public int Id { get; set; } = 0;
-        public static int CountOfObjects { get; set; } = 0;
-        public string TypeOfLibrary { get; set; }
+        public static int CountObjects { get; set; } = 0;
+        public string LevelLibrary { get; set; } = "отсутствует значение";
+        public ItypeLibrary TypeLibrary { get; set; }
 
         /// <summary>
         /// Конструктор по умолчанию класса Library
         /// </summary>
         public Library()
         {
-            CountOfObjects++;
+            CountObjects++;
             Id++;
-            Name = "Библиотека №" + CountOfObjects.ToString();
+            Name = "Библиотека №" + CountObjects.ToString();
+        }
+
+        /// <summary>
+        /// Конструктор с параметрами класса Library.
+        /// </summary>
+        /// <param name="Addres"></param>
+        /// <param name="NumberPhone"></param>
+        /// <param name="Rating"></param>
+        /// <param name="CountBooks"></param>
+        /// <param name="CountSeats"></param>
+        /// <param name="TypeLibrary"></param>
+        public Library(string Name, string Addres, string NumberPhone, float Rating, int CountBooks, int CountSeats, string LevelLibrary, ItypeLibrary TypeLibrary)
+        {
+            this.Name = Name;
+            this.Addres = Addres;
+            this.NumberPhone = NumberPhone;
+            this.Rating = Rating;
+            this.CountBooks = CountBooks;
+            this.CountSeats = CountSeats;
+            this.LevelLibrary = LevelLibrary;
+            this.TypeLibrary = TypeLibrary;
+
+            CountObjects++;
+            Id++;
         }
 
         /// <summary>
