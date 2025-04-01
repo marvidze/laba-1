@@ -20,6 +20,9 @@ namespace laba_1
         private string defaultTel = "0";
         private int defaultBooks = 0;
         private int defaultPlace = 0;
+        private string defaultType = "0";
+        private string defaultLevel = "0";
+
 
         public CreateOneParametrObject()
         {
@@ -37,8 +40,9 @@ namespace laba_1
             defaultTel = item.NumberPhone;
             defaultBooks = item.CountBooks;
             defaultPlace = item.CountSeats;
+            defaultType = item.TypeLibrary.GetTypeLibrary();
+            defaultLevel = item.LevelLibrary;
             button_createObject.Hide();
-            /////////////////////////////////////////////////// comboBox не отображается
         }
 
         private void CreateOneParametrObject_Load(object sender, EventArgs e)
@@ -113,9 +117,22 @@ namespace laba_1
             _item.NumberPhone = textBox_tel.Text;
             _item.CountBooks = (int)numericUpDown_books.Value;
             _item.CountSeats = (int)numericUpDown_place.Value;
-            ////////////////////////////////////////////////////////////////////////////////////////// comboBox
+            _item.LevelLibrary = comboBox_level_library.Text;
+            if (comboBox_type_library.Text == "Техническая")
+            {
+                ItypeLibrary techLibrary = new TechnicalLibrary();
+                _item.TypeLibrary = techLibrary;
+            }
+            else
+            {
+                ItypeLibrary artLibrary = new ArtLibrary();
+                _item.TypeLibrary = artLibrary;
+            }
 
-            this.DialogResult = DialogResult.OK;
+
+                ////////////////////////////////////////////////////////////////////////////////////////// comboBox
+
+                this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
