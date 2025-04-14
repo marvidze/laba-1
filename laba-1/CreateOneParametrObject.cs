@@ -130,9 +130,7 @@ namespace laba_1
             }
 
 
-                ////////////////////////////////////////////////////////////////////////////////////////// comboBox
-
-                this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
