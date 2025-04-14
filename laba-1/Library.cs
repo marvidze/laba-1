@@ -30,9 +30,11 @@ namespace laba_1
         public int CountBooks { get; set; } = 0;
         public int CountSeats { get; set; } = 0;
         public int Id { get; set; } = 0;
+        public bool IsOpen { get; private set; } = false;
         public static int CountObjects { get; set; } = 0;
         public string LevelLibrary { get; set; } = "отсутствует значение";
         public ItypeLibrary TypeLibrary { get; set; }
+
 
         /// <summary>
         /// Конструктор по умолчанию класса Library
@@ -89,6 +91,26 @@ namespace laba_1
                 throw new StackOverflowException("Стек переполнен!");
             }
             IWantToException(count+1);
+        }
+
+        public string OpenLibrary()
+        {
+            if (IsOpen) return "Библиотека уже открыта!";
+            else
+            {
+                IsOpen = true;
+                return "Вы открыли библиотеку!";
+            }
+        }
+
+        public string CloseLibrary()
+        {
+            if (!IsOpen) return "Библиотека уже зыкрыта!";
+            else
+            {
+                IsOpen = false;
+                return "Вы зыкрыли библиотеку!";
+            }
         }
     }
 }
