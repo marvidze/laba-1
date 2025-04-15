@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArtLibrary.cs" />
+    <Compile Include="CloseLibraryCommand.cs" />
     <Compile Include="CreateOneParametrObject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,9 +55,11 @@
       <DependentUpon>CreateOneParametrObject.cs</DependentUpon>
     </Compile>
     <Compile Include="FilialLibrary.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="ItypeLibrary.cs" />
     <Compile Include="LibraryException.cs" />
     <Compile Include="LibraryList.cs" />
+    <Compile Include="LibraryManager.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +67,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainLibrary.cs" />
+    <Compile Include="OpenLibraryCommand.cs" />
     <Compile Include="TechnicalLibrary.cs" />
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>

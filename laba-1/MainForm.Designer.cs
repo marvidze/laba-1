@@ -33,24 +33,18 @@ namespace laba_1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.buttonCreateObjectOneParametr = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.formObjectsList = new System.Windows.Forms.ListBox();
             this.buttonDeleteObject = new System.Windows.Forms.Button();
             this.formListInfoObject = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonShowAllParametrs = new System.Windows.Forms.Button();
-            this.buttonShowAddres = new System.Windows.Forms.Button();
-            this.buttonShowNumberOfPhone = new System.Windows.Forms.Button();
-            this.buttonShowCountOfSeats = new System.Windows.Forms.Button();
-            this.buttonShowCountOfBooks = new System.Windows.Forms.Button();
-            this.buttonShowRating = new System.Windows.Forms.Button();
             this.buttonChangeFields = new System.Windows.Forms.Button();
             this.button_ChangeFields = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.formCountOfObjects = new System.Windows.Forms.Label();
-            this.buttonDontClick = new System.Windows.Forms.Button();
-            this.button_compare = new System.Windows.Forms.Button();
-            this.richTextBox_CompareTime = new System.Windows.Forms.RichTextBox();
+            this.buttonOpenLibrary = new System.Windows.Forms.Button();
+            this.buttonCloseLibrary = new System.Windows.Forms.Button();
+            this.formObjectsList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -65,7 +59,7 @@ namespace laba_1
             this.buttonCreateObjectOneParametr.TabIndex = 0;
             this.buttonCreateObjectOneParametr.Text = "Создать объект ";
             this.buttonCreateObjectOneParametr.UseVisualStyleBackColor = false;
-            this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.buttonCreateObjectAllParametr_Click);
+            this.buttonCreateObjectOneParametr.Click += new System.EventHandler(this.ButtonCreateObjectAllParametr_Click);
             // 
             // buttonExit
             // 
@@ -79,17 +73,7 @@ namespace laba_1
             this.buttonExit.TabIndex = 0;
             this.buttonExit.Text = "Выйти";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // formObjectsList
-            // 
-            this.formObjectsList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.formObjectsList.FormattingEnabled = true;
-            this.formObjectsList.ItemHeight = 21;
-            this.formObjectsList.Location = new System.Drawing.Point(12, 33);
-            this.formObjectsList.Name = "formObjectsList";
-            this.formObjectsList.Size = new System.Drawing.Size(206, 613);
-            this.formObjectsList.TabIndex = 3;
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // buttonDeleteObject
             // 
@@ -103,7 +87,7 @@ namespace laba_1
             this.buttonDeleteObject.TabIndex = 0;
             this.buttonDeleteObject.Text = "Удалить объект";
             this.buttonDeleteObject.UseVisualStyleBackColor = false;
-            this.buttonDeleteObject.Click += new System.EventHandler(this.buttonDeleteObject_Click);
+            this.buttonDeleteObject.Click += new System.EventHandler(this.ButtonDeleteObject_Click);
             // 
             // formListInfoObject
             // 
@@ -112,7 +96,7 @@ namespace laba_1
             this.formListInfoObject.ItemHeight = 21;
             this.formListInfoObject.Location = new System.Drawing.Point(224, 33);
             this.formListInfoObject.Name = "formListInfoObject";
-            this.formListInfoObject.Size = new System.Drawing.Size(325, 256);
+            this.formListInfoObject.Size = new System.Drawing.Size(325, 550);
             this.formListInfoObject.TabIndex = 3;
             // 
             // label1
@@ -147,77 +131,7 @@ namespace laba_1
             this.buttonShowAllParametrs.TabIndex = 0;
             this.buttonShowAllParametrs.Text = "Показать все поля";
             this.buttonShowAllParametrs.UseVisualStyleBackColor = false;
-            this.buttonShowAllParametrs.Click += new System.EventHandler(this.buttonShowAllParametrs_Click);
-            // 
-            // buttonShowAddres
-            // 
-            this.buttonShowAddres.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonShowAddres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowAddres.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonShowAddres.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShowAddres.Location = new System.Drawing.Point(728, 33);
-            this.buttonShowAddres.Name = "buttonShowAddres";
-            this.buttonShowAddres.Size = new System.Drawing.Size(167, 67);
-            this.buttonShowAddres.TabIndex = 0;
-            this.buttonShowAddres.Text = "Показать адрес";
-            this.buttonShowAddres.UseVisualStyleBackColor = false;
-            this.buttonShowAddres.Click += new System.EventHandler(this.buttonShowAdress_Click);
-            // 
-            // buttonShowNumberOfPhone
-            // 
-            this.buttonShowNumberOfPhone.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonShowNumberOfPhone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowNumberOfPhone.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonShowNumberOfPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShowNumberOfPhone.Location = new System.Drawing.Point(555, 179);
-            this.buttonShowNumberOfPhone.Name = "buttonShowNumberOfPhone";
-            this.buttonShowNumberOfPhone.Size = new System.Drawing.Size(167, 67);
-            this.buttonShowNumberOfPhone.TabIndex = 0;
-            this.buttonShowNumberOfPhone.Text = "Показать номер телефона";
-            this.buttonShowNumberOfPhone.UseVisualStyleBackColor = false;
-            this.buttonShowNumberOfPhone.Click += new System.EventHandler(this.buttonShowNumberOfPhone_Click);
-            // 
-            // buttonShowCountOfSeats
-            // 
-            this.buttonShowCountOfSeats.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonShowCountOfSeats.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowCountOfSeats.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonShowCountOfSeats.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShowCountOfSeats.Location = new System.Drawing.Point(728, 106);
-            this.buttonShowCountOfSeats.Name = "buttonShowCountOfSeats";
-            this.buttonShowCountOfSeats.Size = new System.Drawing.Size(167, 67);
-            this.buttonShowCountOfSeats.TabIndex = 0;
-            this.buttonShowCountOfSeats.Text = "Показать количество мест в читальном зале";
-            this.buttonShowCountOfSeats.UseVisualStyleBackColor = false;
-            this.buttonShowCountOfSeats.Click += new System.EventHandler(this.buttonShowCountOfSeats_Click);
-            // 
-            // buttonShowCountOfBooks
-            // 
-            this.buttonShowCountOfBooks.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonShowCountOfBooks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowCountOfBooks.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonShowCountOfBooks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShowCountOfBooks.Location = new System.Drawing.Point(728, 179);
-            this.buttonShowCountOfBooks.Name = "buttonShowCountOfBooks";
-            this.buttonShowCountOfBooks.Size = new System.Drawing.Size(167, 67);
-            this.buttonShowCountOfBooks.TabIndex = 0;
-            this.buttonShowCountOfBooks.Text = "Показать количество книг";
-            this.buttonShowCountOfBooks.UseVisualStyleBackColor = false;
-            this.buttonShowCountOfBooks.Click += new System.EventHandler(this.buttonShowCountOfBooks_Click);
-            // 
-            // buttonShowRating
-            // 
-            this.buttonShowRating.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonShowRating.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowRating.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonShowRating.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShowRating.Location = new System.Drawing.Point(555, 106);
-            this.buttonShowRating.Name = "buttonShowRating";
-            this.buttonShowRating.Size = new System.Drawing.Size(167, 67);
-            this.buttonShowRating.TabIndex = 0;
-            this.buttonShowRating.Text = "Показать рейтинг";
-            this.buttonShowRating.UseVisualStyleBackColor = false;
-            this.buttonShowRating.Click += new System.EventHandler(this.buttonShowRating_Click);
+            this.buttonShowAllParametrs.Click += new System.EventHandler(this.ButtonShowAllParametrs_Click);
             // 
             // buttonChangeFields
             // 
@@ -232,19 +146,19 @@ namespace laba_1
             this.button_ChangeFields.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_ChangeFields.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_ChangeFields.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ChangeFields.Location = new System.Drawing.Point(643, 252);
+            this.button_ChangeFields.Location = new System.Drawing.Point(728, 33);
             this.button_ChangeFields.Name = "button_ChangeFields";
             this.button_ChangeFields.Size = new System.Drawing.Size(167, 67);
             this.button_ChangeFields.TabIndex = 0;
             this.button_ChangeFields.Text = "Изменить поля";
             this.button_ChangeFields.UseVisualStyleBackColor = false;
-            this.button_ChangeFields.Click += new System.EventHandler(this.button_ChangeFields_Click);
+            this.button_ChangeFields.Click += new System.EventHandler(this.Button_ChangeFields_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(551, 506);
+            this.label3.Location = new System.Drawing.Point(224, 613);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(224, 21);
             this.label3.TabIndex = 5;
@@ -255,50 +169,49 @@ namespace laba_1
             this.formCountOfObjects.AutoSize = true;
             this.formCountOfObjects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.formCountOfObjects.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.formCountOfObjects.Location = new System.Drawing.Point(776, 498);
+            this.formCountOfObjects.Location = new System.Drawing.Point(454, 600);
             this.formCountOfObjects.Name = "formCountOfObjects";
             this.formCountOfObjects.Size = new System.Drawing.Size(34, 39);
             this.formCountOfObjects.TabIndex = 6;
             this.formCountOfObjects.Text = "0";
             this.formCountOfObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonDontClick
+            // buttonOpenLibrary
             // 
-            this.buttonDontClick.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonDontClick.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDontClick.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonDontClick.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDontClick.Location = new System.Drawing.Point(684, 325);
-            this.buttonDontClick.Name = "buttonDontClick";
-            this.buttonDontClick.Size = new System.Drawing.Size(79, 41);
-            this.buttonDontClick.TabIndex = 0;
-            this.buttonDontClick.Text = "НЕ НАЖИМАТЬ";
-            this.buttonDontClick.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonDontClick.UseVisualStyleBackColor = false;
-            this.buttonDontClick.Click += new System.EventHandler(this.button_DontClick_Click);
+            this.buttonOpenLibrary.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonOpenLibrary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOpenLibrary.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonOpenLibrary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpenLibrary.Location = new System.Drawing.Point(555, 106);
+            this.buttonOpenLibrary.Name = "buttonOpenLibrary";
+            this.buttonOpenLibrary.Size = new System.Drawing.Size(167, 67);
+            this.buttonOpenLibrary.TabIndex = 7;
+            this.buttonOpenLibrary.Text = "Открыть библиотеку";
+            this.buttonOpenLibrary.UseVisualStyleBackColor = false;
             // 
-            // button_compare
+            // buttonCloseLibrary
             // 
-            this.button_compare.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_compare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_compare.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button_compare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_compare.Location = new System.Drawing.Point(224, 306);
-            this.button_compare.Name = "button_compare";
-            this.button_compare.Size = new System.Drawing.Size(325, 67);
-            this.button_compare.TabIndex = 10;
-            this.button_compare.Text = "Сравнить";
-            this.button_compare.UseVisualStyleBackColor = false;
-            this.button_compare.Click += new System.EventHandler(this.button_compare_Click);
+            this.buttonCloseLibrary.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonCloseLibrary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCloseLibrary.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonCloseLibrary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCloseLibrary.Location = new System.Drawing.Point(728, 106);
+            this.buttonCloseLibrary.Name = "buttonCloseLibrary";
+            this.buttonCloseLibrary.Size = new System.Drawing.Size(167, 67);
+            this.buttonCloseLibrary.TabIndex = 8;
+            this.buttonCloseLibrary.Text = "Закрыть библиотеку";
+            this.buttonCloseLibrary.UseVisualStyleBackColor = false;
+            this.buttonCloseLibrary.Click += new System.EventHandler(this.ButtonCloseLibrary_Click);
             // 
-            // richTextBox_CompareTime
+            // formObjectsList
             // 
-            this.richTextBox_CompareTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_CompareTime.Location = new System.Drawing.Point(224, 390);
-            this.richTextBox_CompareTime.Name = "richTextBox_CompareTime";
-            this.richTextBox_CompareTime.Size = new System.Drawing.Size(325, 256);
-            this.richTextBox_CompareTime.TabIndex = 11;
-            this.richTextBox_CompareTime.Text = "";
+            this.formObjectsList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.formObjectsList.FormattingEnabled = true;
+            this.formObjectsList.ItemHeight = 21;
+            this.formObjectsList.Location = new System.Drawing.Point(16, 34);
+            this.formObjectsList.Name = "formObjectsList";
+            this.formObjectsList.Size = new System.Drawing.Size(200, 529);
+            this.formObjectsList.TabIndex = 9;
             // 
             // MainForm
             // 
@@ -306,29 +219,23 @@ namespace laba_1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(904, 661);
-            this.Controls.Add(this.richTextBox_CompareTime);
-            this.Controls.Add(this.button_compare);
+            this.Controls.Add(this.formObjectsList);
+            this.Controls.Add(this.buttonCloseLibrary);
+            this.Controls.Add(this.buttonOpenLibrary);
             this.Controls.Add(this.formCountOfObjects);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.formListInfoObject);
-            this.Controls.Add(this.formObjectsList);
             this.Controls.Add(this.buttonCreateObjectOneParametr);
-            this.Controls.Add(this.buttonShowRating);
-            this.Controls.Add(this.buttonShowCountOfBooks);
-            this.Controls.Add(this.buttonShowCountOfSeats);
-            this.Controls.Add(this.buttonDontClick);
             this.Controls.Add(this.button_ChangeFields);
-            this.Controls.Add(this.buttonShowNumberOfPhone);
-            this.Controls.Add(this.buttonShowAddres);
             this.Controls.Add(this.buttonShowAllParametrs);
             this.Controls.Add(this.buttonDeleteObject);
             this.Controls.Add(this.buttonExit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Laba_2";
+            this.Text = "Лабораторная работа №5";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,23 +245,17 @@ namespace laba_1
 
         private System.Windows.Forms.Button buttonCreateObjectOneParametr;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.ListBox formObjectsList;
         private System.Windows.Forms.Button buttonDeleteObject;
         private System.Windows.Forms.ListBox formListInfoObject;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonShowAllParametrs;
-        private System.Windows.Forms.Button buttonShowAddres;
-        private System.Windows.Forms.Button buttonShowNumberOfPhone;
-        private System.Windows.Forms.Button buttonShowCountOfSeats;
-        private System.Windows.Forms.Button buttonShowCountOfBooks;
-        private System.Windows.Forms.Button buttonShowRating;
         private Button buttonChangeFields;
         private Button button_ChangeFields;
         private Label label3;
         private Label formCountOfObjects;
-        private Button buttonDontClick;
-        private Button button_compare;
-        private RichTextBox richTextBox_CompareTime;
+        private Button buttonOpenLibrary;
+        private Button buttonCloseLibrary;
+        private ListBox formObjectsList;
     }
 }

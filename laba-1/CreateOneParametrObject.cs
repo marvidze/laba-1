@@ -135,6 +135,8 @@ namespace laba_1
                 ItypeLibrary artLibrary = new ArtLibrary();
                 _item.TypeLibrary = artLibrary;
             }
+
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
