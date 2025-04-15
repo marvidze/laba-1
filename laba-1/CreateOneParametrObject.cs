@@ -55,10 +55,17 @@ namespace laba_1
             numericUpDown_place.Value = defaultPlace;
             comboBox_type_library.Items.Add("Техническая");
             comboBox_type_library.Items.Add("Художественная");
-            comboBox_type_library.SelectedItem = comboBox_type_library.Items[0];
+            if(defaultType == "Техническая")
+            {
+                comboBox_type_library.SelectedItem = comboBox_type_library.Items[0];
+            } else comboBox_type_library.SelectedItem = comboBox_type_library.Items[1];
+            
             comboBox_level_library.Items.Add("Главное здание");
             comboBox_level_library.Items.Add("Филиал");
-            comboBox_level_library.SelectedItem = comboBox_level_library.Items[0];
+            if (defaultLevel == "Главное здание")
+            {
+                comboBox_level_library.SelectedItem = comboBox_level_library.Items[0];
+            } else comboBox_level_library.SelectedItem = comboBox_level_library.Items[1];
         }
 
         private void button_createObject_Click(object sender, EventArgs e)
@@ -128,11 +135,7 @@ namespace laba_1
                 ItypeLibrary artLibrary = new ArtLibrary();
                 _item.TypeLibrary = artLibrary;
             }
-
-
-                ////////////////////////////////////////////////////////////////////////////////////////// comboBox
-
-                this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 

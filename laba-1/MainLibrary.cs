@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace laba_1
 {
+    /// <summary>
+    /// Класс MainLibrary - класс представляющий главную бибилиотеку, одну из абстракций.
+    /// </summary>
     public class MainLibrary : Library
     {
         public string name;
