@@ -90,7 +90,7 @@ namespace laba_1
             {
                 throw new StackOverflowException("Стек переполнен!");
             }
-            IWantToException(count+1);
+            IWantToException(count + 1);
         }
 
         public void OpenLibrary()

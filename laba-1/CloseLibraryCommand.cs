@@ -8,7 +8,7 @@ namespace laba_1
 {
     internal class CloseLibraryCommand : ICommand
     {
-        private Library library;
+        private readonly Library library;
 
         public CloseLibraryCommand(Library library) => this.library = library;
 

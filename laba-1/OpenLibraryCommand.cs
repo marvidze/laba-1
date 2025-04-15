@@ -9,7 +9,7 @@ namespace laba_1
     internal class OpenLibraryCommand : ICommand
     {
         private Library library;
-        public OpenLibraryCommand(Library library) 
+        public OpenLibraryCommand(Library library)
         {
             this.library = library;
         }
