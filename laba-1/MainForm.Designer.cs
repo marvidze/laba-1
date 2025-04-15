@@ -45,6 +45,7 @@ namespace laba_1
             this.buttonOpenLibrary = new System.Windows.Forms.Button();
             this.buttonCloseLibrary = new System.Windows.Forms.Button();
             this.formObjectsList = new System.Windows.Forms.ListBox();
+            this.buttonUndoAction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateObjectOneParametr
@@ -188,6 +189,7 @@ namespace laba_1
             this.buttonOpenLibrary.TabIndex = 7;
             this.buttonOpenLibrary.Text = "Открыть библиотеку";
             this.buttonOpenLibrary.UseVisualStyleBackColor = false;
+            this.buttonOpenLibrary.Click += new System.EventHandler(this.ButtonOpenLibrary_Click);
             // 
             // buttonCloseLibrary
             // 
@@ -210,8 +212,23 @@ namespace laba_1
             this.formObjectsList.ItemHeight = 21;
             this.formObjectsList.Location = new System.Drawing.Point(16, 34);
             this.formObjectsList.Name = "formObjectsList";
-            this.formObjectsList.Size = new System.Drawing.Size(200, 529);
+            this.formObjectsList.Size = new System.Drawing.Size(200, 613);
             this.formObjectsList.TabIndex = 9;
+            this.formObjectsList.SelectedIndexChanged += new System.EventHandler(this.formObjectsList_SelectedIndexChanged);
+            // 
+            // buttonUndoAction
+            // 
+            this.buttonUndoAction.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonUndoAction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUndoAction.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonUndoAction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUndoAction.Location = new System.Drawing.Point(643, 179);
+            this.buttonUndoAction.Name = "buttonUndoAction";
+            this.buttonUndoAction.Size = new System.Drawing.Size(167, 67);
+            this.buttonUndoAction.TabIndex = 10;
+            this.buttonUndoAction.Text = "Отменить последнее действие";
+            this.buttonUndoAction.UseVisualStyleBackColor = false;
+            this.buttonUndoAction.Click += new System.EventHandler(this.ButtonUndoAction_Click);
             // 
             // MainForm
             // 
@@ -219,6 +236,7 @@ namespace laba_1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(904, 661);
+            this.Controls.Add(this.buttonUndoAction);
             this.Controls.Add(this.formObjectsList);
             this.Controls.Add(this.buttonCloseLibrary);
             this.Controls.Add(this.buttonOpenLibrary);
@@ -257,5 +275,6 @@ namespace laba_1
         private Button buttonOpenLibrary;
         private Button buttonCloseLibrary;
         private ListBox formObjectsList;
+        private Button buttonUndoAction;
     }
 }

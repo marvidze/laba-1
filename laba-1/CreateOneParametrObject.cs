@@ -13,7 +13,7 @@ namespace laba_1
 {
     public partial class CreateOneParametrObject : Form
     {
-        private Library _item;
+        public Library _item;
         private string defaultName = "Библиотека №" + (Library.CountObjects + 1);
         private string defaultAdress = "0";
         private float defaultRating = 0;
@@ -112,6 +112,7 @@ namespace laba_1
             }
 
             MainForm.libraries.Add(library);
+            _item = library;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

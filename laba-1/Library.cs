@@ -93,23 +93,29 @@ namespace laba_1
             IWantToException(count+1);
         }
 
-        public string OpenLibrary()
+        public void OpenLibrary()
         {
-            if (IsOpen) return "Библиотека уже открыта!";
+            if (IsOpen)
+            {
+                throw new Exception("Библиотека уже открыта");
+            }
             else
             {
                 IsOpen = true;
-                return "Вы открыли библиотеку!";
+                return;
             }
         }
 
-        public string CloseLibrary()
+        public void CloseLibrary()
         {
-            if (!IsOpen) return "Библиотека уже зыкрыта!";
+            if (!IsOpen)
+            {
+                throw new Exception("Библиотека уже закрыта");
+            }
             else
             {
                 IsOpen = false;
-                return "Вы зыкрыли библиотеку!";
+                return;
             }
         }
     }

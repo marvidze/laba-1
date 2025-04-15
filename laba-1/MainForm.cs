@@ -21,6 +21,7 @@ namespace laba_1
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr MessageBox(IntPtr hWnd, string text, string caption, uint type);
 
+        private static LibraryManager libraryManager = new LibraryManager();
         // Список экземпляров класса Library
         public static LibrariesList libraries = new LibrariesList();
 
@@ -48,6 +49,8 @@ namespace laba_1
         {
             CreateOneParametrObject OneParametrForm = new CreateOneParametrObject();
             DialogResult result = OneParametrForm.ShowDialog();
+            ShowAllParametrs(OneParametrForm._item);
+
         }
 
         private void ButtonExit_Click(object sender, EventArgs e)
@@ -57,13 +60,10 @@ namespace laba_1
 
         private void ButtonDeleteObject_Click(object sender, EventArgs e)
         {
-            Library a = (Library)formObjectsList.SelectedItem;
+            
             try
             {
-                if (a == null)
-                {
-                    throw new Exception("Вы не выбрали объект ");
-                }
+                Library a = (Library)formObjectsList.SelectedItem ?? throw new Exception("Вы не выбрали объект ");
                 libraries.Remove(a);
                 a = null;
                 Library.CountObjects -= 1;
@@ -82,8 +82,82 @@ namespace laba_1
         {
             try
             {
-                Library a = (Library)formObjectsList.SelectedItem;
-                string[] arr = {
+                Library a = (Library)formObjectsList.SelectedItem ?? throw new Exception("Вы не выбрали объект!");
+                ShowAllParametrs(a);
+            }
+            catch (LibraryException ex)
+            {
+                IntPtr window = this.Handle;
+                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
+            }
+         
+        }
+
+        private void Button_ChangeFields_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Library item = (Library)formObjectsList.SelectedItem ?? throw new Exception("Вы не выбрали объект!");
+                CreateOneParametrObject OneParametrForm = new CreateOneParametrObject(item);
+                DialogResult result = OneParametrForm.ShowDialog();
+                ShowAllParametrs(item);
+            }
+            catch(Exception ex)
+            {
+                IntPtr window = this.Handle;
+                MessageBox(window, ex.Message, "Ошибка", 0);
+            }
+        }
+        
+        private void ButtonCloseLibrary_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Library item = (Library)formObjectsList.SelectedItem ?? throw new Exception("Вы не выбрали объект!");
+                var closeLibraryCommand = new CloseLibraryCommand(item);
+                libraryManager.ExecuteCommand(closeLibraryCommand);
+                ShowAllParametrs(item);
+            }
+            catch (Exception ex)
+            {
+                IntPtr window = this.Handle;
+                MessageBox(window, ex.Message, "Ошибка", 0);
+            }
+        }
+
+        private void ButtonOpenLibrary_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Library item = (Library)formObjectsList.SelectedItem ?? throw new Exception("Вы не выбрали объект!");
+                var openLibraryCommand = new OpenLibraryCommand(item);
+                libraryManager.ExecuteCommand(openLibraryCommand);
+                ShowAllParametrs(item);
+            }
+            catch (Exception ex)
+            {
+                IntPtr window = this.Handle;
+                MessageBox(window, ex.Message, "Ошибка", 0);
+            }
+        }
+
+        private void ButtonUndoAction_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Library item = (Library)formObjectsList.SelectedItem;
+                if (libraryManager.UndoLastCommand()) ShowAllParametrs(item);
+                else throw new Exception("Стек последних комманд пуст!");
+            }catch(Exception ex)
+            {
+                IntPtr window = this.Handle;
+                MessageBox(window, ex.Message, "Ошибка", 0);
+            }
+        }
+
+        private void ShowAllParametrs(Library a)
+        {
+            string[] arr = {
                 "Библиотека открыта? -> " + a.IsOpen,
                 "Статус библиотеки: "+a.LevelLibrary,
                 "Тип библиотеки: "+a.TypeLibrary.GetTypeLibrary(),
@@ -94,45 +168,14 @@ namespace laba_1
                 "Количество книг: " + a.CountBooks.ToString(),
                 "Количество мест в читальном зале: " + a.CountSeats.ToString()
                 };
-                formListInfoObject.Items.Clear();
-                formListInfoObject.Items.AddRange(arr);
-            }
-            catch (LibraryException ex)
-            {
-                IntPtr window = this.Handle;
-                MessageBox(window, $"{ex.Message}", "Ошибка", 0);
-            }
-            catch
-            {
-                IntPtr window = this.Handle;
-                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
-            }
+            formListInfoObject.Items.Clear();
+            formListInfoObject.Items.AddRange(arr);
         }
 
-        private void Button_ChangeFields_Click(object sender, EventArgs e)
+        private void formObjectsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Library item = (Library)formObjectsList.SelectedItem;
-                CreateOneParametrObject OneParametrForm = new CreateOneParametrObject(item);
-                DialogResult result = OneParametrForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    formObjectsList.Items.Clear();
-                    formObjectsList.Items.AddRange(libraries.ToArray());
-                    Library a = (Library)formObjectsList.SelectedItem;
-                }
-            }
-            catch
-            {
-                IntPtr window = this.Handle;
-                MessageBox(window, "Вы не выбрали объект!", "Ошибка", 0);
-            }
-        }
-        
-        private void ButtonCloseLibrary_Click(object sender, EventArgs e)
-        {
-
+            Library item = (Library)formObjectsList.SelectedItem;
+            ShowAllParametrs(item);
         }
     }
 }
